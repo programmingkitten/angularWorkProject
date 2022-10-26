@@ -1,0 +1,10 @@
+#contacts{
+    color: #d3c41b;
+    border-bottom: 3px solid #c1b211;
+    padding: 0;
+}
+
+#contacts:hover:after {
+    transform: scaleX(0);
+    transform-origin: bottom left;;
+}
