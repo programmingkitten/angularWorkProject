@@ -1,0 +1,15 @@
+
+nav {
+    float: left;
+    position: relative;
+    width: 30%;
+    height: 100%;
+}
+
+.middleContent {
+    float: left;
+}
+
+.sideBar {
+    float: right;
+}
