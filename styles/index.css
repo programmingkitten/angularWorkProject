@@ -13,3 +13,14 @@ nav {
 .sideBar {
     float: right;
 }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.logo img {
+    width: 350px;
+    height: 140px;
+    margin-left: 2vw;
+}
