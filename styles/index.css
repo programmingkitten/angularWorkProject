@@ -1,26 +1,10 @@
-
-nav {
-    float: left;
-    position: relative;
-    width: 30%;
-    height: 100%;
-}
-
-.middleContent {
-    float: left;
-}
-
-.sideBar {
-    float: right;
-}
-
-ul {
-    list-style-type: none;
+#home{
+    color: #c1b211;
+    border-bottom: 3px solid #c1b211;
     padding: 0;
 }
 
-.logo img {
-    width: 350px;
-    height: 140px;
-    margin-left: 2vw;
+#home:hover:after {
+    transform: scaleX(0);
+    transform-origin: bottom left;;
 }
