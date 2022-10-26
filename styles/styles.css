@@ -128,3 +128,17 @@ nav .subscribeDiv {
 .subscribeDiv input:focus, input:focus{
     outline: none;
 }
+
+.subscribeDiv span {
+    color: rgb(132, 127, 127);
+}
+
+.middleContent {
+    position: relative;
+    left: 23.6%;
+}
+
+.middleContent img {
+    width: 39vw;
+    height: 103vh;
+}
