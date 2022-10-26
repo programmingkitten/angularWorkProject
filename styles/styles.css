@@ -151,17 +151,56 @@ nav .subscribeDiv {
 
 .content {
     margin-top: 28vh;
-    margin-left: 5vw;
+    margin-left: 4vw;
 }
 
 .sideBar h1 {
-    color: rgb(47, 47, 47);
+    color: rgb(57, 56, 56);
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: calc(.7em + 0.6vw);
+    letter-spacing: 1.3px;
+    font-weight:900;
+    margin: 0;
 }
 
 .sideBar h2 {
-    color: red;
+    color: rgb(212, 199, 199);
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: calc(1.1em + 1.4vw);
+    margin: 0;
+}
+
+.text {
+    position: relative;
+}
+
+.littleBorder {
+    height: 7.4vh;
+    border-left: 3px solid #c1b211;
+    position: absolute;
+    margin-top: 1vh;
 }
 
 .sideBar p {
-    color: red
+    color: rgb(152, 76, 76);
+    font-family: "Poppins", Arial, sans-serif;
+    width: 24vw;
+    font-size: calc(.5em + 0.6vw);
+    margin-left: 2vw;
+}
+
+.sideBar p span {
+    color: indianred;
+    font-size: calc(.6em + 0.9vw);
+    
+}
+
+.content button {
+    background-color: transparent;
+    color: rgb(186, 149, 14);
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 900;
+    border: 2px solid rgb(186, 149, 14);
+    font-size: calc(.5em + 0.6vw);
+    margin-top: 4vh;
 }
