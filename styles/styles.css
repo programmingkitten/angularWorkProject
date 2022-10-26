@@ -142,3 +142,26 @@ nav .subscribeDiv {
     width: 39vw;
     height: 103vh;
 }
+
+.sideBar {
+    background-color: rgba(17,17,17,255);
+    width: 37.4%;
+    height: 100vh;
+}
+
+.content {
+    margin-top: 28vh;
+    margin-left: 5vw;
+}
+
+.sideBar h1 {
+    color: rgb(47, 47, 47);
+}
+
+.sideBar h2 {
+    color: red;
+}
+
+.sideBar p {
+    color: red
+}
