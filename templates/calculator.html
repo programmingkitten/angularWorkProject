@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/styles/calculator.css">
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-
+    
 
 </head>
 <body>
@@ -70,9 +70,18 @@
         label.push(num)
     }
     
-    const lineGraph = createChar(ctx, 'line', numbers, label, 'rgba(164, 7, 7, 0.858)', 2)
-
-
+    let lineGraph = createChar(ctx, 'line', [1, 2], label, 'rgba(164, 7, 7, 0.858)', 2)
+    console.log(lineGraph.data.datasets[0].data)
+    let timeOut = 100;
+    let bonus = 100;
+    for (let num of numbers) {
+        setTimeout(() => { 
+            lineGraph.data.datasets[0].data.push(num)
+            lineGraph.update()
+         }, timeOut);
+         timeOut += bonus
+        
+    }
     const barGraph = createChar(barGraphCanvas, 'bar', groupNumbers(numbers), 
     ['0-100', '100-1k', '1k-10k', '10k-100k', '100k-1m'],'rgba(164, 7, 7, 0.858)', 1)
 
@@ -144,21 +153,6 @@
     return myChart
     }
 
-    function addData(chart, label, data) {
-        chart.data.labels.push(label);
-        chart.data.datasets.forEach((dataset) => {
-            dataset.data.push(data);
-        });
-        chart.update();
-}
-
-    function removeData(chart) {
-        chart.data.labels.pop();
-        chart.data.datasets.forEach((dataset) => {
-            dataset.data.pop();
-        });
-        chart.update();
-}
 
     </script>
     
