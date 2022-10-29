@@ -1,6 +1,62 @@
 
 .container {
-    width: 40vw;
+    position: relative;
+    width: 27vw;
     height: 40vw;
     border: 3px solid red;
+    margin-left: 30vw;
+    margin-top: 5vh;
+    background-image: linear-gradient(rgba(164, 7, 7, 0.858), rgb(5, 5, 5) 90%);
+}
+
+.settingsBar img{
+    position: absolute;
+    margin-left: 24vw;
+    width: 2vw;
+    margin-top: 1vh;
+}
+
+.topBar {
+    text-align: center;
+    font-size: calc(.5em + .7vw);
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.topBar img {
+    position: absolute;
+    float: right;
+}
+
+#titleSpan {
+    color: rgb(207, 92, 92);
+}
+
+
+
+.graph {
+    width: 90%;
+    height: 20vh;
+}
+
+.screen input {
+    color: green;
+    font-size: calc(1em + 1vw);
+    margin-left: 3vw;
+    width: 70%;
+    border: none;
+    border-bottom: 3px solid rgba(9, 74, 9, 0.4);
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: transparent;
+
+}
+
+.screen input:focus, input:focus{
+    outline: none;
+}
+
+
+.barGraph {
+    height: 20vh;
+    width: 10vw;
+    margin-bottom: 10vh;
 }

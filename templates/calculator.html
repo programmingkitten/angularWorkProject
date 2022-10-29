@@ -6,17 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/calculator.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
 
 </head>
 <body>
 
     <div class="container">
+        <div class="settingsBar">
+            <img src="../images/settingsIcon.png">
+        </div>
         <div class="topBar">
             <div class="dropDownMenu"> 
 
             </div>
 
-            <h1> Colatz Calculator</h1>
+            <h1> 
+                <span id="titleSpan">PYLA</span> APP
+            </h1>
             
             <div class="settings"> 
 
@@ -31,7 +39,17 @@
 
         <div class="graphDiv">
             <div class="graphHistory"></div>
-            <div class="graph"></div>
+            <div class="graph">
+                <canvas id="myChart" width="100" height="70" style="background-color: transparent;"></canvas>
+            </div>
+
+            <div class="graph">
+                <canvas id="myChart" width="100" height="70" style="background-color: transparent;"></canvas>
+            </div>
+
+            <div class="barGraph">
+                <canvas id="barGraph" width="100" height="70" style="background-color: transparent;"></canvas>
+            </div>
         </div>
 
         <div class="info">
@@ -40,6 +58,93 @@
 
 
     </div>
+
+    <script>
+    let numbers = [1, 1, 1, 10, 20, 60, 50, 30, 100, 20, 50, 3, 70, 10, 20, 60, 50, 30, 100, 201, 10, 20, 60, 50, 30, 100, 20, 50, 3, 70, 10, 20, 60, 50, 30, 105, 100, 201, 1]
+    numbers = numbers.slice(3, numbers.length-1)
+    const ctx = document.getElementById('myChart');
+    const barGraphCanvas = document.getElementById('barGraph')
+    let label = [];
+    let count = 0;
+    for (let num of numbers) {
+        label.push(num)
+    }
+    
+    const lineGraph = createChar(ctx, 'line', numbers, label, 'rgba(164, 7, 7, 0.858)', 2)
+
+
+    const barGraph = createChar(barGraphCanvas, 'bar', groupNumbers(numbers), 
+    ['0-100', '100-1k', '1k-10k', '10k-100k', '100k-1m'],'rgba(164, 7, 7, 0.858)', 1)
+
+    function groupNumbers(array) {
+        const numbers = [];
+        array.sort(function(a, b) {
+            return a - b;
+        });
+        
+        let count = 0;
+        let groupThreshold = 100;
+        for (let num of array) {
+            console.log(num)
+            if (num < groupThreshold) {
+                count += 1;
+            } else {
+                numbers.push(count);
+                count = 0;
+                groupThreshold = groupThreshold * 10;
+                console.log(`new GROUP THRESHOLD - ${groupThreshold}`)
+            }
+        }
+
+        numbers.push(count)
+        console.log(numbers)
+        return numbers
+    }
+
+    function createChar(canvas, type, numbers, dataLabel, lineColor, borderWith,) {
+        const myChart = new Chart(canvas, {
+        type: type,
+        data: {
+            labels: dataLabel,
+            datasets: [{
+                label: '',
+                data: [...numbers],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+
+                ],
+                borderColor: [
+                    lineColor,
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                ],
+                borderWidth: borderWith,
+            },]
+        },
+        options: {
+
+            
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }    
+        }
+    });
+
+    return myChart
+    }
+
+    </script>
     
 </body>
 </html>
