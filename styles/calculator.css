@@ -1,3 +1,17 @@
+body {
+    background-color: rgba(20, 9, 9, 0.763);
+}
+
+#calculator{
+    color: #d3c41b;
+    border-bottom: 3px solid #c1b211;
+    padding: 0;
+}
+
+#calculator:hover:after {
+    transform: scaleX(0);
+    transform-origin: bottom left;;
+}
 
 .container {
     position: relative;
