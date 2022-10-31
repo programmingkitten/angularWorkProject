@@ -65,7 +65,7 @@
     
             <div class="screen">
                 <input>
-                <button>GENERATE</button> 
+                <img src="../images/algorithm.png">
             </div>
     
             <div class="graphDiv">
@@ -74,17 +74,18 @@
                     <canvas id="myChart" width="100" height="70" style="background-color: transparent;"></canvas>
                 </div>
     
-                <div class="graph">
-                    <canvas id="myChart" width="100" height="70" style="background-color: transparent;"></canvas>
-                </div>
-    
+               
+            <div class="wrapper">
                 <div class="barGraph">
-                    <canvas id="barGraph" width="100" height="70" style="background-color: transparent;"></canvas>
+                        <canvas id="barGraph" width="100" height="70" style="background-color: transparent;"></canvas>
+                    </div>
                 </div>
-            </div>
     
-            <div class="info">
-    
+                <div class="info">
+                    <input style="background-color: transparent ;" type="range" id='red' min="1" max="220" value="164" id="range">
+                    <input type="range" id='green' min="7" max="220" value="7" id="range">
+                    <input type="range" id='blue' min="7" max="220" value="7" id="range">
+                </div>
             </div>
     
     
@@ -113,8 +114,10 @@
     </div>
 
     
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <script>
+    
     let numbers = [1, 1, 1, 10, 20, 60, 50, 30, 100, 20, 50, 3, 70, 10, 20, 60, 50, 30, 100, 201, 10, 20, 60, 50, 30, 100, 20, 50, 3, 70, 10, 20, 60, 50, 30, 105, 100, 201, 1]
     numbers = numbers.slice(3, numbers.length-1)
     const ctx = document.getElementById('myChart');
@@ -126,7 +129,7 @@
     }
     
     let lineGraph = createChar(ctx, 'line', [1, 2], label, 'rgba(164, 7, 7, 0.858)', 2)
-    console.log(lineGraph.data.datasets[0].data)
+    console.log(lineGraph.data.datasets[0].borderColor, 'data')
     let timeOut = 100;
     let bonus = 100;
     for (let num of numbers) {
@@ -209,6 +212,73 @@
     }
 
 
+    </script>
+
+    <script>
+        console.log(lineGraph.config.type, '!!!')
+        let currentGraph = lineGraph;
+        const colors = {
+            'red': 164,
+            'blue': 7,
+            'green': 7
+        }
+
+        
+
+        document.getElementById('myChart').addEventListener('click', () => {
+            currentGraph = lineGraph;
+            resetColors()
+        })
+
+        document.getElementById('barGraph').addEventListener('click', () => {
+            currentGraph = barGraph;
+            resetColors()
+        })
+
+       
+
+        const redInput = document.getElementById('red');
+        const blueInput = document.getElementById('blue');
+        const greenInput = document.getElementById('green');
+
+        function resetColors() {
+            colors['red'] = 164;
+            colors['blue'] = 7;
+            colors['green']= 7;
+            console.log(redInput.value)
+            redInput.value = 164;
+            blueInput.value = 7;
+            greenInput.value = 7;
+        }
+
+        function updateGraphColor(graph, input, color) {
+            colors[color] = Number(redInput.value)
+            if (graph.config.type == 'bar') {
+                graph.data.datasets[0].backgroundColor.shift()
+                graph.data.datasets[0].backgroundColor.push(`rgba(${colors.red}, ${colors.green}, ${colors.blue}, 0.84)`)
+            } else if (graph.config.type == 'line'){
+                graph.data.datasets[0].borderColor.shift()
+                graph.data.datasets[0].borderColor.unshift(`rgba(${colors.red}, ${colors.green}, ${colors.blue}, 0.84)`)
+            }
+            graph.update()
+        }
+
+        $("#red").on("input change", function() {
+            updateGraphColor(currentGraph, redInput, 'red')
+        });
+
+        $("#green").on("input change", function() {
+            updateGraphColor(currentGraph, greenInput, 'green')
+
+
+        });
+
+        $("#blue").on("input change", function() {
+            updateGraphColor(currentGraph, blueInput, 'blue')
+        });
+
+        console.log(lineGraph.data.datasets[0].borderColor, 'data')
+        console.log(myChart)
     </script>
     
 </body>

@@ -50,18 +50,26 @@ body {
 .graph {
     width: 90%;
     height: 20vh;
+    margin-top: 3vh;
 }
 
 .screen input {
     color: green;
     font-size: calc(1em + 1vw);
     margin-left: 3vw;
-    width: 70%;
+    width: 60%;
     border: none;
     border-bottom: 3px solid rgba(9, 74, 9, 0.4);
     font-family: "Poppins", Arial, sans-serif;
     background-color: transparent;
 
+}
+
+.screen img {
+    position: absolute;
+    width: 15%;
+    margin-top: 2vh;
+    margin-left: 1vw;
 }
 
 .screen input:focus, input:focus{
@@ -72,5 +80,20 @@ body {
 .barGraph {
     height: 20vh;
     width: 10vw;
-    margin-bottom: 10vh;
+    float: left;
+}
+
+.info {
+    float: right;
+    margin-right: 5vw;
+    margin-top: 1vh;
+}
+
+.info input {
+    margin-top: 3vh;
+    display: block;
+}
+
+input[type=range] {
+    background-color: transparent;
 }
