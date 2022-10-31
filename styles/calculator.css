@@ -94,6 +94,32 @@ body {
     display: block;
 }
 
+.options {
+    color: indianred;
+    text-align: center;
+    font-size: calc(.2em + .2vw);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.graphOptions {
+    display: none;
+    margin-top: 5vh;
+}
+
+.options h1 {
+    height: 5px;
+}
+
+.options img {
+    margin-top: 4.8vh;
+    margin-right: 10vw;
+    width: calc(3em + 3vw);
+}
+
+.wrapper {
+    height: 18vh;
+}
+
 input[type=range] {
     background-color: transparent;
 }
