@@ -123,3 +123,17 @@ body {
 input[type=range] {
     background-color: transparent;
 }
+
+.logoApp img{
+    width: calc(9em + 9vw);
+}
+
+.logoApp {
+    position: absolute;
+    margin-left: 3vw;
+    margin-top: 2.4vh;
+}
+
+#heightFromLogo {
+    height: 13vh;
+}
