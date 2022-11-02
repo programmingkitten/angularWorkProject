@@ -6,14 +6,13 @@ const graphImage = document.getElementById('graphImage');
                 100, 150,30, 100, 150,120, 150,200, 160, 130, 100, 65, 20],
             'excessSky': [1, 100, 100, 100, 100, 100, 1, 1, 100, 100, 100, 100, 100, 1, 1, 100, 100, 100, 100, 100, 1, 1, 100, 100, 100, 100, 100, 1, 20, 50, 100, 111, 140, 170, 210],
             'enderEye': groupNumbersFromString(
-                '265474412336070826161184345391715209996887366966452867359152978710944414194889554643873925129169503175932681321807871472522584230532423631885418140365727719083100867659956298793738275764563249'),
-        }
+                '265474412336070826161184345391715209996887366966452867359152978710944414194889554643873925129169503175932681321807871472522584230532423631885418140365727719083100867659956298793738275764563249')}
 
-        graphUpdater('angelOfDeath', dataGraphOptions.angelOfDeath, lineGraph)
+        graphUpdater('angelOfDeath', dataGraphOptions.angelOfDeath, lineGraph);
+        
+        graphUpdater('excessSky', dataGraphOptions.excessSky, lineGraph);
 
-        graphUpdater('excessSky', dataGraphOptions.excessSky,lineGraph)
-
-        graphUpdater('enderEye', dataGraphOptions.enderEye ,lineGraph)
+        graphUpdater('enderEye', dataGraphOptions.enderEye ,lineGraph);
 
 
         function groupNumbersFromString(stringData) {
@@ -32,7 +31,7 @@ const graphImage = document.getElementById('graphImage');
 
         function graphUpdater(elId, data, graphUpdate) {
             document.getElementById(elId).addEventListener('click', 
-            () => updateGraph(data, graphUpdate))
+            () => updateGraph(graphUpdate, data))
         }
 
        
