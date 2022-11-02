@@ -54,12 +54,12 @@ body {
 }
 
 .screen input {
-    color: green;
+    color: rgb(6, 8, 1);
     font-size: calc(1em + 1vw);
     margin-left: 3vw;
     width: 60%;
     border: none;
-    border-bottom: 3px solid rgba(9, 74, 9, 0.4);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.32);
     font-family: "Poppins", Arial, sans-serif;
     background-color: transparent;
 
