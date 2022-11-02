@@ -14,8 +14,19 @@ const graphImage = document.getElementById('graphImage');
             updateGraph(lineGraph, data)
         })
 
-        document.getElementById('enderEye').addEventListener('click', () => {
-            let stringData = '265474412336070826161184345391715209996887366966452867359152978710944414194889554643873925129169503175932681321807871472522584230532423631885418140365727719083100867659956298793738275764563249';
+        document.getElementById('excessSky').addEventListener('click', () => {
+            const data = [1, 100, 100, 100, 100, 100, 1, 1, 100, 100, 100, 100, 100, 1, 1, 100, 
+            100, 100, 100, 100, 1, 1, 100, 100, 100, 100, 100, 1, 20, 50, 100, 111, 140, 170, 210]
+            updateGraph(lineGraph, data)
+        })
+       
+        graphUpdater('enderEye', groupNumbersFromString(
+            '265474412336070826161184345391715209996887366966452867359152978710944414194889554643873925129169503175932681321807871472522584230532423631885418140365727719083100867659956298793738275764563249',
+            lineGraph
+            ))
+
+
+        function groupNumbersFromString(stringData) {
             const numData = [];
             let cNum = '';
             for (let i = 0; i < stringData.length; i++) {
@@ -26,13 +37,16 @@ const graphImage = document.getElementById('graphImage');
                 }
             }
 
-            updateGraph(lineGraph, numData)
-        })
+            return numData
+        }
 
-        function graphChoiceGenerator(elId, data, graphUpdate) {
+        function graphUpdater(elId, data, graphUpdate) {
             document.getElementById(elId).addEventListener('click', 
             () => updateGraph(data, graphUpdate))
         }
+
+       
+        // can't use it currently due to not enough knowledge on how to get lineGraph imported
 
         graphImage.addEventListener('click', () => {
             graphImage.style.display = 'none';
