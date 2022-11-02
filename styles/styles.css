@@ -204,3 +204,13 @@ nav .subscribeDiv {
     font-size: calc(.5em + 0.6vw);
     margin-top: 4vh;
 }
+
+.middleContent {
+    background: url('../images/middleBg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 39%;
+  height: 100vh;
+}

@@ -17,10 +17,10 @@ body {
     position: relative;
     width: 27vw;
     height: 40vw;
-    border: 3px solid red;
+    border: 3px solid rgb(94, 6, 6);
     margin-left: 7vw;
     margin-top: 5vh;
-    background-image: linear-gradient(rgba(164, 7, 7, 0.858), rgb(5, 5, 5) 90%);
+    background-image: linear-gradient(rgba(164, 7, 7, 0.5), rgb(5, 5, 5) 90%);
 }
 
 .settingsBar img{
