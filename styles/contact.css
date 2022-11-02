@@ -8,3 +8,19 @@
     transform: scaleX(0);
     transform-origin: bottom left;;
 }
+
+.sideBar {
+    width: 55%;
+    
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+.middleContent {
+    background: url('../images/middleBg.jp') no-repeat center center fixed; 
+    width: 25%;
+    background-color: #F3C623;
+}
+
