@@ -18,3 +18,12 @@
     border-bottom: 3px solid #c1b211;
     padding: 0;
 }
+
+.aboutBox p {
+    margin-left: 0;
+}
+
+.aboutBox p {
+    height: 40vh;
+    overflow-y: auto;
+}
