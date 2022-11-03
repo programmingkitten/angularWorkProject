@@ -1,0 +1,10 @@
+
+.loadingBar {
+    margin-left: 10vh;
+    width: 10vw;
+}
+
+.loadingBar h1 {
+    color: red;
+    
+}
