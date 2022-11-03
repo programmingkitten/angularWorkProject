@@ -15,12 +15,147 @@
 }
 
 body {
-    font-family: 'Poppins';
 }
 
 .middleContent {
-    background: url('../images/middleBg.jp') no-repeat center center fixed; 
-    width: 25%;
-    background-color: #F3C623;
+background: url('../images/middleBg.jp') no-repeat center center fixed; 
+width: 25%;
+background-color: #F3C623;
 }
 
+.title {
+font-weight: 100;
+width: 70%;
+margin-left: 3vw;
+margin-top: 9vh;
+}
+
+.title h1 {
+font-size: calc(.9em + .9vw);
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 100;
+}
+
+.title p {
+font-size: calc(.5em + .5vw);
+font-family: 'Poppins';
+
+}
+
+.contacts {
+margin-top: 4vh;
+}
+
+.contact {
+position: relative;
+width: 90%;
+font-family: "Poppins";
+padding-bottom: 12vh;
+}
+
+.contact span {
+font-weight: 900;
+font-size: calc(.5em + .5vw);
+}
+
+.contact img {
+float: left;
+width: calc(.6em + .6vw);
+margin-left: 2vw;
+margin-top: 1vh;
+padding: 17px;
+border: 1px solid rgba(0, 0, 0, .3);
+border-radius: 100%;
+}
+
+.contact p {
+float: right;
+width: 70%;
+font-size: calc(.5em + .5vw);
+}
+
+.sideBar form {
+margin-left: 7vw;
+margin-top: 5vh;
+}
+
+.sideBar form h1 {
+color: white;
+font-size: calc(1em + 1vw);
+}
+
+.sideBar input, label {
+display: block;
+font-family: "Poppins";
+}
+
+.sideBar label {
+color: rgb(118, 111, 111);
+font-weight: 900;
+font-size: calc(.43em + .43vw);
+padding-bottom: 2vh;
+padding-top: 4vh;
+}
+
+form input {
+border: none;
+background-color: transparent;
+font-size: calc(.55em + .55vw);
+color: rgb(179, 173, 173);
+padding-bottom: 1.5vh;
+border-bottom: 1px solid rgba(74, 73, 73, 0.34);
+width: 80%;
+}
+
+form textarea {
+background-color: transparent;
+width: 80%;
+height: 14vh;
+font-size: calc(.55em + .55vw);
+font-family: "Poppins";
+border: none;
+border-bottom: 1px solid rgba(74, 73, 73, 0.34);
+color: rgb(179, 173, 173);
+}
+
+form textarea::placeholder {
+color: rgb(179, 173, 173);
+}
+
+form textarea:focus, input:focus{
+    outline: none;
+}
+
+form input::placeholder {
+color: rgb(179, 173, 173);
+
+}
+
+.nameEmail {
+height: 8vh;
+width: 90%;
+padding-bottom: 5vh;
+}
+
+.nameEmail input {
+width: 20vw;
+
+}
+
+.nameEmail .name {
+float: left;
+}
+
+.nameEmail .email {
+float: right;
+}
+
+form button {
+    background-color: transparent;
+    color: rgb(186, 149, 14);
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 900;
+    border: 2px solid rgb(186, 149, 14);
+    font-size: calc(.5em + 0.6vw);
+    margin-top: 4vh;
+}
