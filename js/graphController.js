@@ -7,8 +7,8 @@ const numInput = document.getElementById('numInput');
 console.log(algButton)
 let label = [];
 let count = 0;
-for (let num of numbers) {
-    label.push(num)
+for (let i=0; i<numbers.length; i++) {
+    label.push(i)
 }
 
 let lineGraph = createChar(ctx, 'line', [1, 2], label, 'rgba(164, 7, 7, 0.858)', 2)
@@ -27,10 +27,10 @@ const barGraph = createChar(barGraphCanvas, 'bar', groupNumbers(numbers),  ['0-1
 
 algButton.addEventListener('click', () => {
     const num = Number(numInput.value);
-    const data = colatzAlg(num);
+    let data = colatzAlg(num);
     for (let i=0; i<4; i++) {
-        max = Math.max(...data) 
-        data.filter(number => number !== max)
+        
+        console.log(data)
     }
     lineGraph.data.datasets[0].data = data;
     console.log(lineGraph.data.datasets[0].data)
