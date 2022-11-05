@@ -1,40 +1,21 @@
-let numbers = [1, 1, 1, 10, 20, 60, 50, 30, 100, 20, 50, 3, 70, 10, 20, 60, 50, 30, 100, 201, 10, 20, 60, 50, 30, 100, 20, 50, 3, 70, 10, 20, 60, 50, 30, 105, 100, 201, 1]
-numbers = numbers.slice(3, numbers.length-1)
+let numbers = colatzAlg(777); 
 const ctx = document.getElementById('myChart');
 const barGraphCanvas = document.getElementById('barGraph');
 const algButton = document.getElementById('algButton');
 const numInput = document.getElementById('numInput');
-console.log(algButton)
-let label = [];
-let count = 0;
-for (let i=0; i<numbers.length; i++) {
-    label.push(i)
-}
 
-let lineGraph = createChar(ctx, 'line', [1, 2], label, 'rgba(164, 7, 7, 0.858)', 2)
-console.log(lineGraph.data.datasets[0].borderColor, 'data')
-let timeOut = 100;
-let bonus = 0;
-for (let num of numbers) {
-    setTimeout(() => { 
-        lineGraph.data.datasets[0].data.push(num)
-        lineGraph.update()
-        }, timeOut);
-        timeOut += bonus
-    
-}
+
+const lineGraph = createChar(ctx, 'line', numbers, rangeNum(1, numbers.length), 'rgba(164, 7, 7, 0.858)', 2)
 const barGraph = createChar(barGraphCanvas, 'bar', groupNumbers(numbers),  ['0-100', '100-1k', '1k-10k', '10k-100k', '100k-1m'],'rgba(164, 7, 7, 0.858)', 1)
 
 algButton.addEventListener('click', () => {
     const num = Number(numInput.value);
     let data = colatzAlg(num);
-    for (let i=0; i<4; i++) {
-        
-        console.log(data)
-    }
     lineGraph.data.datasets[0].data = data;
-    console.log(lineGraph.data.datasets[0].data)
-    lineGraph.update()
+    lineGraph.data['labels'] = rangeNum(1, data.length)
+    barGraph.data.datasets[0].data = groupNumbers(data);
+    barGraph.update();
+    lineGraph.update();
     console.log(data)
 })
 
@@ -125,4 +106,10 @@ function colatzAlg(number) {
 
     }
     return numbers 
+}
+
+function rangeNum(num1, num2) {
+    const numList = [];
+    for (let i = num1; i < num2; i++) {numList.push(i)}
+    return numList;
 }
