@@ -20,10 +20,15 @@
 }
 
 .aboutBox p {
+    height: 35vh;
+    overflow-y: auto;
     margin-left: 0;
+
+}
+.aboutBox {
+    margin-top: 6vh;
 }
 
-.aboutBox p {
-    height: 40vh;
-    overflow-y: auto;
+.aboutBox h1 {
+    padding-bottom: 1vh;
 }
