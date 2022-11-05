@@ -13,8 +13,6 @@ export function colatzAlg(number) {
             numbers.push(Number(number))
         }
 
-        originalNumbersFunc.push(number)
-
         cycles += 1;
 
     }
