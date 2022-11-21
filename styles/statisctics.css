@@ -68,3 +68,14 @@
     height: 10vh;
     text-align: center;
 }
+
+#laughingEmojies {
+    margin-left: 3vw;
+}
+
+#laughingEmojies img{
+    width: 20vw;
+    height: 30vh;
+    margin-right: 3vw;
+    border-radius: 50%;
+}

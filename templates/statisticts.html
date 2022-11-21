@@ -67,9 +67,11 @@
                     <span>$53,781</span>
                 </h1>
             </div>
-            <img src="../images/laughing.jpg">
-            <img src="../images/laughing.jpg">
-            <img src="../images/laughing.jpg">
+            <div id="laughingEmojies">
+                <img src="../images/laughing.jpg">
+                <img src="../images/laughing.jpg">
+                <img src="../images/laughing.jpg">
+            </div>
         </div>
     </div>
 
@@ -77,21 +79,32 @@
     
     const infoDiv = document.getElementsByClassName('infoDiv')[0];
     const accountantDiv = document.getElementsByClassName('accountantDiv')[0];
-    const images = document.getElementsByTagName('img');
-    let timeout = 600;
-    for (let image of images) {
-        image.style.display = 'none';
-        setTimeout(() => {
-            image.style.display = 'inline-block';
-        }, timeout)
-        timeout += 600;
-    };
+    let images = document.getElementsByTagName('img');
+    images = [...images].slice(2, images.length)
+    const accountantDivImages = document.getElementById('laughingEmojies').children
+ 
+    hideShowEl(images, 600)
+
+    
 
     setTimeout(() => {
         infoDiv.style.display = 'none';
         accountantDiv.style.display = 'block';
+        hideShowEl(accountantDivImages, 600)
     }, 7000);
     
+
+    function hideShowEl(elList, timeout) {
+        let timeOutBonus = timeout;
+        for (let el of elList) {
+            el.style.display = 'none';
+            setTimeout(() => {
+                el.style.display = 'inline-block';
+            }, timeout)
+        timeout += timeOutBonus;
+        };
+    }
+
 </script>
 
 </body>
