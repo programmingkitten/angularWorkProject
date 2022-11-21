@@ -12,10 +12,12 @@ algButton.addEventListener('click', () => {
     const num = Number(numInput.value);
     let data = colatzAlg(num);
     lineGraph.data.datasets[0].data = data;
+    console.log(data)
     lineGraph.data['labels'] = rangeNum(1, data.length)
+    lineGraph.update();
+
     barGraph.data.datasets[0].data = groupNumbers(data);
     barGraph.update();
-    lineGraph.update();
     console.log(data)
 })
 
@@ -64,6 +66,7 @@ function createChar(canvas, type, numbers, dataLabel, lineColor, borderWith,) {
                 'rgba(75, 192, 192, 1)',
                 'rgba(153, 102, 255, 1)',
             ],
+            pointRadius: 1,
             borderWidth: borderWith,
         },]
     },
