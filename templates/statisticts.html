@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/statisctics.css">
+
 
 </head>
 <body>
@@ -37,5 +39,60 @@
                 <span>github</span><p>
         </div>
     </nav>
+
+    <div class="statistics">
+        <h1>ok</h1> 
+        <div class="infoDiv">
+            <h1>Did you know..</h1>
+            <p> <span>94%</span> of people who start learning coding <span>GIVE UP</span> </p> 
+            <img src="../images/laughing.jpg">
+            <img src="../images/laughing.jpg">
+            <img src="../images/laughing.jpg">
+        </div>
+
+        <div class="accountantDiv">
+
+            <div class="iconText">
+                <img src="../images/laptop.png">
+                <h1> 
+                    Avarage salary of a front end developer is 
+                    <span>$106,922</span>
+                </h1>
+            </div>
+            <div class="iconText">
+                <img src="../images/accountant.png">
+                
+                <h1> 
+                    Avarage salary of accountants is 
+                    <span>$53,781</span>
+                </h1>
+            </div>
+            <img src="../images/laughing.jpg">
+            <img src="../images/laughing.jpg">
+            <img src="../images/laughing.jpg">
+        </div>
+    </div>
+
+<script>
+    
+    const infoDiv = document.getElementsByClassName('infoDiv')[0];
+    const accountantDiv = document.getElementsByClassName('accountantDiv')[0];
+    const images = document.getElementsByTagName('img');
+    let timeout = 600;
+    for (let image of images) {
+        image.style.display = 'none';
+        setTimeout(() => {
+            image.style.display = 'inline-block';
+        }, timeout)
+        timeout += 600;
+    };
+
+    setTimeout(() => {
+        infoDiv.style.display = 'none';
+        accountantDiv.style.display = 'block';
+    }, 7000);
+    
+</script>
+
 </body>
 </html>
