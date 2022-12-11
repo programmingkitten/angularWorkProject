@@ -27,7 +27,7 @@ def userList(request):
 
     elif request.method == 'POST':
         user_data = JSONParser().parse(request)
-        userSerializer = UserTestSerializer(data=tutorial_data)
+        userSerializer = UserTestSerializer(data=user_data)
         if userSerializer.is_valid():
             userSerializer.save()
             return JsonResponse(userSerializer.data, status=status.HTTP_201_CREATED)
@@ -40,8 +40,14 @@ def userList(request):
 def userDetails(request, pk):
     try:
         user = UserTest.objects.get(pk=pk)
+        return JsonResponse({'user':
+                            {
+                                'name': user.name,
+                                'age': user.age
+                             }},
+                            status=status.HTTP_200_OK)
     except UserTest.DoesNotExist:
-        return JsonResponse({'message': 'The tutorial does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        return JsonResponse({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
 def user_list_published(request):

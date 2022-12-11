@@ -16,7 +16,7 @@ export class UserListComponent {
 
   onClickHandler() {
     const data = this.userAPI.getAll()
-    data.subscribe(u => console.log(u))
+    data.subscribe(u => console.log(u[0].age))
   }
 }
 
