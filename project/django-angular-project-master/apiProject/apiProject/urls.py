@@ -1,5 +1,5 @@
 from api import views
-from django.conf.urls import url, include
+from django.urls import re_path, include
 from django.contrib import admin
 from rest_framework import routers
 
@@ -10,15 +10,15 @@ router.register(r'notes', views.NoteViewSet)
 urlpatterns = [
 
     # Admin url
-    url(r'^admin/', admin.site.urls),
+    re_path(r'^admin/', admin.site.urls),
 
     # Page url
-    url(r'^$', views.HomePageView.as_view()),
-    url(r'^users/', views.UsersPageView.as_view()),
-    url(r'^notes/', views.NotesPageView.as_view()),
+    re_path(r'^$', views.HomePageView.as_view()),
+    re_path(r'^users/', views.UsersPageView.as_view()),
+    re_path(r'^notes/', views.NotesPageView.as_view()),
 
     # Api urls
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/', include(router.urls))
+    re_path(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    re_path(r'^api/', include(router.urls))
 
 ]
