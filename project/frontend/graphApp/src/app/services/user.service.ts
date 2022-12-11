@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IUser } from '../user/user';
 
-const baseUrl = 'http://localhost:8000/api/Users';
+const baseUrl = 'http://localhost:8000/api/users';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +13,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<IUser[]> {
+    console.log(this.http.get<IUser[]>(baseUrl))
     return this.http.get<IUser[]>(baseUrl);
   }
 
@@ -36,7 +37,7 @@ export class UserService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<User[]> {
-    return this.http.get<User[]>(`${baseUrl}?title=${title}`);
+  findByTitle(title: any): Observable<IUser[]> {
+    return this.http.get<IUser[]>(`${baseUrl}?title=${title}`);
   }
 }

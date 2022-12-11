@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+
+
 
 @Component({
   selector: 'app-user-list',
@@ -6,5 +9,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent {
+  
+  constructor(private userAPI: UserService) {
 
+  }
+
+  onClickHandler() {
+    const data = this.userAPI.getAll()
+    data.subscribe(u => console.log(u))
+  }
 }
+

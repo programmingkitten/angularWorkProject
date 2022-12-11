@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserService } from '../services/user.service';
 
 
 
@@ -19,6 +20,8 @@ import { UserListComponent } from './user-list/user-list.component';
     AddUserComponent,
     UserDetailsComponent,
     UserListComponent,
-  ]
+  ],
+
+  providers: [UserService,]
 })
 export class UserModule { }
