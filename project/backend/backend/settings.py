@@ -34,6 +34,7 @@ LOCAL_APPS = [
 
 THIRD_PARTY = [
     'rest_framework',
+    'corsheaders',
 ]
 
 DJANGO_APPS = [
