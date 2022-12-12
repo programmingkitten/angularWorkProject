@@ -10,15 +10,15 @@ Chart.register(...registerables);
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss']
 })
-export class CalculatorComponent implements OnInit{
+export class CalculatorComponent{
   @ViewChild('lineGraph') lineGraph: ElementRef<HTMLCanvasElement> | undefined;
   @ViewChild('barGraph') barGraph: ElementRef<HTMLCanvasElement> | undefined;
   numbers: number[] = []; 
+
   constructor(private graphService: GraphService) {
     this.createGraphs()
   }
-  ngOnInit(): void {
-  }
+
 
   createGraphs() {
     this.numbers = this.graphService.colatzAlg(777)
