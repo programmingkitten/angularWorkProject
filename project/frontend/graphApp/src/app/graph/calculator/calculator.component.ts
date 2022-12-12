@@ -44,6 +44,7 @@ export class CalculatorComponent{
 
   submitNumberHandler() {
     let numbersList = this.graphService.colatzAlg(Number(this.numberInput?.nativeElement.value))
+    
     this.lineChart!.data.datasets[0].data = numbersList;
     this.lineChart!.data['labels'] = this.graphService.rangeNum(1, numbersList.length)
     this.lineChart!.update();
