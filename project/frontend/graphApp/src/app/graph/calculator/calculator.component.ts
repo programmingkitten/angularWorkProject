@@ -16,7 +16,7 @@ export class CalculatorComponent{
   @ViewChild('numberInput') numberInput: ElementRef | undefined;
   numbers: number[] = []; 
   lineChart: Chart | undefined;
-  graphChart: Chart | undefined;
+  barChart: Chart | undefined;
   constructor(private graphService: GraphService) {
     this.createGraphs()
   }
@@ -32,14 +32,14 @@ export class CalculatorComponent{
         'red', 2, 
         )
 
-      this.graphChart = this.graphService.createChar(
+      this.barChart = this.graphService.createChar(
         this.barGraph?.nativeElement, 'bar', this.graphService.groupNumbers(this.numbers),  
         ['0-100', '100-1k', '1k-10k', '10k-100k', '100k-1m'],'rgba(164, 7, 7, 0.858)', 1)
     }, 0)
   }
 
   getValue() {
-    console.log(this.lineGraph, this.barGraph)
+    console.log(this.lineChart, this.barChart)
   }
 
   submitNumberHandler() {
