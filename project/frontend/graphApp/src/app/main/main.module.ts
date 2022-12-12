@@ -16,6 +16,13 @@ import { StatisticsComponent } from './statistics/statistics.component';
   ],
   imports: [
     CommonModule
+  ],
+
+  exports: [
+    AboutComponent,
+    ContactComponent,
+    IndexComponent,
+    StatisticsComponent,
   ]
 })
 export class MainModule { }

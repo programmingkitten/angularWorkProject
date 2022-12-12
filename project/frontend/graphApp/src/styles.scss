@@ -1,1 +1,227 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    overflow: hidden; /* Hide scrollbars */
+  }
+
+body {
+    margin: 0;
+}
+
+.middleContent {
+    float: left;
+}
+
+.sideBar {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.logo img {
+    width: 20vw;
+    height: 14vh;
+    margin-left: 1.3vw;
+    margin-top: 3vh;
+}
+
+
+nav {
+    float: left;
+    position: fixed;
+    width: 24%;
+    height: 100vh;
+    background-color: black;
+}
+
+nav .subscribeDiv {
+    position: absolute;
+    bottom: 0;
+}
+
+.navLinks {
+    margin-left: 2vw;
+    margin-top: 4vh;
+}
+
+
+.navLinks a{
+    display: inline-block;
+    position: relative;
+    font-size: calc(.3em + 0.7vw);
+    font-stretch: extra-expanded;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-family:"Poppins", Arial, sans-serif;
+    color: rgb(190, 185, 185);
+    margin-top: 2vh;
+    padding-bottom: 4px;
+    margin-bottom: -2px;
+}
+
+.navLinks a:hover {
+    color: #d3c41b;
+}
+
+.navLinks a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #c1b211;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+.navLinks a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+.imgBorder img{
+    position: absolute;
+    margin-left: 23vw;
+    height: 101vh;
+}
+
+.subscribeDiv {
+    position: relative;
+    margin-left: 2.3vw;
+    margin-bottom: 5vh;
+}
+
+.subscribeDiv p {
+    color: rgb(58, 56, 56);
+    font-size: calc(.2em + .7vw);
+    font-family: "Poppins", Arial, sans-serif;
+    width: 15vw;
+    font-weight: 900;
+}
+
+.subscribeDiv h1{
+    color: rgb(138, 134, 134);
+    font-size: calc(.4em + .6vw);
+    font-family: "Poppins", Arial, sans-serif;
+
+    font-weight: 900;
+}
+
+.subscribeDiv input {
+    background-color: transparent;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 600;
+    font-size: calc(.3em + .5vw);
+    color: rgb(138, 134, 134);
+    letter-spacing: 0.8px;
+    padding-left: 1vw;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    padding-right: 5vw;
+    border: 1px solid rgb(46, 46, 46);
+}
+
+.subscribeDiv input:focus, input:focus{
+    outline: none;
+}
+
+.subscribeDiv span {
+    color: rgb(132, 127, 127);
+}
+
+.middleContent {
+    position: relative;
+    left: 23.6%;
+}
+
+.middleContent .backgroundImg img {
+    width: 39vw;
+    height: 103vh;
+}
+
+.sideBar {
+    background-color: rgba(17,17,17,255);
+    width: 37.4%;
+    height: 100vh;
+}
+
+.content {
+    margin-top: 28vh;
+    margin-left: 4vw;
+}
+
+.sideBar h1 {
+    color: rgb(57, 56, 56);
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: calc(.7em + 0.6vw);
+    letter-spacing: 1.3px;
+    font-weight:900;
+    margin: 0;
+}
+
+.sideBar h2 {
+    color: rgb(212, 199, 199);
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: calc(1.1em + 1.4vw);
+    margin: 0;
+}
+
+.text {
+    position: relative;
+}
+
+.littleBorder {
+    height: 7.4vh;
+    border-left: 3px solid #c1b211;
+    position: absolute;
+    margin-top: 1vh;
+}
+
+.sideBar p {
+    color: rgb(152, 76, 76);
+    font-family: "Poppins", Arial, sans-serif;
+    width: 24vw;
+    font-size: calc(.5em + 0.6vw);
+    margin-left: 2vw;
+}
+
+.sideBar p span {
+    color: indianred;
+    font-size: calc(.6em + 0.9vw);
+    
+}
+
+.content button {
+    background-color: transparent;
+    color: rgb(186, 149, 14);
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 900;
+    border: 2px solid rgb(186, 149, 14);
+    font-size: calc(.5em + 0.6vw);
+    margin-top: 4vh;
+}
+
+.middleContent {
+    background: url('./images/middleBg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 39%;
+  height: 100vh;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
