@@ -10,7 +10,7 @@ export class GraphService {
 
   constructor() { }
 
-  createChar(canvas: any, type: string, numbers: number[], dataLabel: string[], lineColor: string, borderWith: number,) {
+  createChar(canvas: any, type: string, numbers: number[], dataLabel: any, lineColor: string, borderWith: number,) {
         const lineChartType = `${type}`;
         const myChart = new Chart(canvas as any, {
         type: lineChartType as any,
