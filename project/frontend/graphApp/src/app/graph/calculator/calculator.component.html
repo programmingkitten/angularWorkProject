@@ -1,1 +1,109 @@
-<p>calculator works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/calculator.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <link rel="stylesheet" href="/styles/styles.css">
+
+
+</head>
+<body>
+
+    <div class="middleContent">
+        <div class="container">
+            <div class="settingsBar">
+                <img src="/assets/images/settingsIcon.png">
+            </div>
+            <div class="topBar">
+                <div class="dropDownMenu"> 
+    
+                </div>
+                <div class="logoApp">
+                    <img src="/assets/images/logoApp.png">
+                </div>
+
+                <div id="heightFromLogo">
+                    
+                </div>
+                <div class="settings"> 
+    
+                </div>
+    
+            </div>
+    
+            <div class="screen">
+                <input id="numInput" type="number">
+                <img src="/assets/images/algorithm.png" id="algButton">
+            </div>
+    
+            <div class="graphDiv">
+                <div class="graphHistory"></div>
+                <div class="graph">
+                    <canvas id="myChart" width="100" height="70" style="background-color: transparent;"></canvas>
+                </div>
+        </div>
+        <div class="wrapper">
+            <div class="barGraph">
+                    <canvas id="barGraph" width="100" height="70" style="background-color: transparent;"></canvas>
+            </div>
+
+            <div class="info">
+                <input style="background-color: transparent ;" type="range" id='red' min="1" max="220" value="164" id="range">
+                <input type="range" id='green' min="7" max="220" value="7" id="range">
+                <input type="range" id='blue' min="7" max="220" value="7" id="range">
+            </div>
+        </div>
+            <div class="options">
+                
+                <img src="/assets/images/graphIcon.png" id="graphImage">
+                <div class="graphOptions" id="graphOptions">
+                    <h1 id="angelOfDeath">Angel of Death</h1>
+                    <h1 id="excessSky">Excess sky</h1>
+                    <h1 id="enderEye">Ender eye</h1> 
+                    <h1 id="godsHeart">God's heart</h1>
+                    <h1 id="lostLove">Lost love</h1>
+                    <h1 id="hope">Hope</h1>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div class="sideBar">
+        <div class="content">
+            <h1> COLATZ </h1>
+            <h2> PylaAI Colatz Calculator </h2>
+            <div class="text"> 
+                <div class="littleBorder"></div>
+                <p> 
+                    PylaAI Colatz Calculator
+                    is a simple calculator that
+                    can calculate the needed 
+                    amount of cycles to reach
+                    the number 1 with any given number
+                    using the colatz formula 
+                    <span>3x+1</span>
+                </p> 
+            </div>  
+
+            <button> Show me the app </button> 
+        </div>
+    </div>
+
+    
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+ 
+
+    
+</body>
+</html>

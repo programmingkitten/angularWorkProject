@@ -1,0 +1,139 @@
+body {
+    background-color: rgba(20, 9, 9, 0.763);
+}
+
+#calculator{
+    color: #d3c41b;
+    border-bottom: 3px solid #c1b211;
+    padding: 0;
+}
+
+#calculator:hover:after {
+    transform: scaleX(0);
+    transform-origin: bottom left;;
+}
+
+.container {
+    position: relative;
+    width: 27vw;
+    height: 40vw;
+    border: 3px solid rgb(94, 6, 6);
+    margin-left: 7vw;
+    margin-top: 5vh;
+    background-image: linear-gradient(rgba(164, 7, 7, 0.5), rgb(5, 5, 5) 90%);
+}
+
+.settingsBar img{
+    position: absolute;
+    margin-left: 24vw;
+    width: 2vw;
+    margin-top: 1vh;
+}
+
+.topBar {
+    text-align: center;
+    font-size: calc(.5em + .7vw);
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.topBar img {
+    position: absolute;
+    float: right;
+}
+
+#titleSpan {
+    color: rgb(207, 92, 92);
+}
+
+
+
+.graph {
+    width: 90%;
+    height: 20vh;
+    margin-top: 3vh;
+}
+
+.screen input {
+    color: rgb(6, 8, 1);
+    font-size: calc(1em + 1vw);
+    margin-left: 3vw;
+    width: 60%;
+    border: none;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.32);
+    font-family: "Poppins", Arial, sans-serif;
+    background-color: transparent;
+
+}
+
+.screen img {
+    position: absolute;
+    width: 15%;
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
+
+.screen input:focus, input:focus{
+    outline: none;
+}
+
+
+.barGraph {
+    height: 20vh;
+    width: 10vw;
+    float: left;
+}
+
+.info {
+    float: right;
+    margin-right: 5vw;
+    margin-top: 1vh;
+}
+
+.info input {
+    margin-top: 3vh;
+    display: block;
+}
+
+.options {
+    color: indianred;
+    text-align: center;
+    font-size: calc(.2em + .2vw);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.graphOptions {
+    display: none;
+    margin-top: 5vh;
+}
+
+.options h1 {
+    height: 5px;
+}
+
+.options img {
+    margin-top: 4.8vh;
+    margin-right: 10vw;
+    width: calc(3em + 3vw);
+}
+
+.wrapper {
+    height: 18vh;
+}
+
+input[type=range] {
+    background-color: transparent;
+}
+
+.logoApp img{
+    width: calc(9em + 9vw);
+}
+
+.logoApp {
+    position: absolute;
+    margin-left: 3vw;
+    margin-top: 2.4vh;
+}
+
+#heightFromLogo {
+    height: 13vh;
+}
