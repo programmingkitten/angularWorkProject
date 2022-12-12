@@ -11,9 +11,9 @@ export class GraphService {
   constructor() { }
 
   createChar(canvas: any, type: string, numbers: number[], dataLabel: string[], lineColor: string, borderWith: number,) {
-        const lineChartType: ChartType = 'line';
+        const lineChartType = `${type}`;
         const myChart = new Chart(canvas as any, {
-        type: 'line',
+        type: lineChartType as any,
         data: {
             labels: dataLabel,
             datasets: [{

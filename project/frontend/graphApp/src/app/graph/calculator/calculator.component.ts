@@ -26,7 +26,7 @@ export class CalculatorComponent{
   getValue() {
     console.log(this.lineGraph, this.barGraph)
     this.graphService.createChar(
-      this.lineGraph?.nativeElement, '!',
+      this.lineGraph?.nativeElement, 'line',
       [1, 10, 20, 30, 40, 20, 35, 30, 40, 45, 30, 20, 100, 200],
       ['1', '10', '20', '30', '40', '20', '35', '30', '40', '45', '30', '20', '100', '200'],
       'red', 2, 
