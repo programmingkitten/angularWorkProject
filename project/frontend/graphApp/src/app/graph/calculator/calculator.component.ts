@@ -10,13 +10,15 @@ Chart.register(...registerables);
   templateUrl: './calculator.component.html',
   styleUrls: ['./calculator.component.scss']
 })
-export class CalculatorComponent{
+export class CalculatorComponent implements OnInit{
   @ViewChild('lineGraph') lineGraph: ElementRef<HTMLCanvasElement> | undefined;
 
   barGraph: HTMLCanvasElement = document.getElementById('barGraph') as HTMLCanvasElement;
 
   constructor(private graphService: GraphService) {
-    
+    this.getValue()
+  }
+  ngOnInit(): void {
   }
 
   createGraphs() {
@@ -25,11 +27,13 @@ export class CalculatorComponent{
 
   getValue() {
     console.log(this.lineGraph, this.barGraph)
-    this.graphService.createChar(
-      this.lineGraph?.nativeElement, 'line',
-      [1, 10, 20, 30, 40, 20, 35, 30, 40, 45, 30, 20, 100, 200],
-      ['1', '10', '20', '30', '40', '20', '35', '30', '40', '45', '30', '20', '100', '200'],
-      'red', 2, 
-      )
+    setTimeout(() => {
+      this.graphService.createChar(
+        this.lineGraph?.nativeElement, 'line',
+        [1, 10, 20, 30, 40, 20, 35, 30, 40, 45, 30, 20, 100, 200],
+        ['1', '10', '20', '30', '40', '20', '35', '30', '40', '45', '30', '20', '100', '200'],
+        'red', 2, 
+        )}, 0)
+    
   }
 }
