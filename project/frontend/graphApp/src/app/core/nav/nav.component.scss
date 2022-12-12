@@ -1,0 +1,56 @@
+
+nav {
+    float: left;
+    position: fixed;
+    width: 24%;
+    height: 100vh;
+    background-color: black;
+}
+
+nav .subscribeDiv {
+    position: absolute;
+    bottom: 0;
+}
+
+.navLinks {
+    margin-left: 2vw;
+    margin-top: 4vh;
+}
+
+
+.navLinks a{
+    display: inline-block;
+    position: relative;
+    font-size: calc(.3em + 0.7vw);
+    font-stretch: extra-expanded;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-family:"Poppins", Arial, sans-serif;
+    color: rgb(190, 185, 185);
+    margin-top: 2vh;
+    padding-bottom: 4px;
+    margin-bottom: -2px;
+}
+
+.navLinks a:hover {
+    color: #d3c41b;
+}
+
+.navLinks a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #c1b211;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+.navLinks a:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
