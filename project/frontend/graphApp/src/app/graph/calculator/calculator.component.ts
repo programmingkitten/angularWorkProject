@@ -50,7 +50,7 @@ export class CalculatorComponent{
 
     this.barChart!.data.datasets[0].data = this.graphService.groupNumbers(numbersList);
     this.barChart!.update();
-
+    //ok
   }
   
 
