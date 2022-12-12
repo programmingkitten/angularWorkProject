@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-calculator',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent {
-
+  @ViewChild('lineGraph') lineGraph: ElementRef | undefined;
+  @ViewChild('barGraph') barGraph: ElementRef | undefined;
+    getValue() {
+      console.log(this.lineGraph, this.barGraph)
+    }
 }
