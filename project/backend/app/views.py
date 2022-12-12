@@ -13,8 +13,14 @@ from app.serializers import UserTestSerializer
 ...
 
 
+@api_view(['POST'])
+def addUser(request, data):
+    if request.method == 'GET':
+        print(request, data)
+
+
 @api_view(['GET', 'POST', 'DELETE'])
-def userList(request):
+def userList(request, data=None):
     if request.method == 'GET':
         users = UserTest.objects.all()
 
@@ -30,8 +36,10 @@ def userList(request):
         userSerializer = UserTestSerializer(data=user_data)
         if userSerializer.is_valid():
             userSerializer.save()
+            print(data)
             return JsonResponse(userSerializer.data, status=status.HTTP_201_CREATED)
-        return JsonResponse(userSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return JsonResponse({'ERROR': "UKNOWn"}, status=status.HTTP_400_BAD_REQUEST)
+
 
 # GET list of tutorials, POST a new tutorial, DELETE all tutorials
 
@@ -41,13 +49,14 @@ def userDetails(request, pk):
     try:
         user = UserTest.objects.get(pk=pk)
         return JsonResponse({'user':
-                            {
-                                'name': user.name,
-                                'age': user.age
-                             }},
-                            status=status.HTTP_200_OK)
+            {
+                'name': user.name,
+                'age': user.age
+            }},
+            status=status.HTTP_200_OK)
     except UserTest.DoesNotExist:
         return JsonResponse({'message': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
 
 @api_view(['GET'])
 def user_list_published(request):

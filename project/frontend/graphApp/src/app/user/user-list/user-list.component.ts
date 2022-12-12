@@ -16,7 +16,12 @@ export class UserListComponent {
 
   onClickHandler() {
     const data = this.userAPI.getAll()
-    data.subscribe(u => console.log(u[0].age))
+    data.subscribe(u => {
+      for (let user of u) {
+        console.log(user.name, user.age)
+      }
+    })
+    this.userAPI.create({'name': 'John', 'age': 13}).subscribe()
   }
 }
 
