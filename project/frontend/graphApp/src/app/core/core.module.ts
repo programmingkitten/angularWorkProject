@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -9,7 +11,9 @@ import { NavComponent } from './nav/nav.component';
     NavComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
   ],
 
   exports: [
