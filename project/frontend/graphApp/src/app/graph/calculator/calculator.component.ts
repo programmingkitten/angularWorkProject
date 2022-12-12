@@ -13,6 +13,7 @@ Chart.register(...registerables);
 export class CalculatorComponent{
   @ViewChild('lineGraph') lineGraph: ElementRef<HTMLCanvasElement> | undefined;
   @ViewChild('barGraph') barGraph: ElementRef<HTMLCanvasElement> | undefined;
+  @ViewChild('numberInput') numberInput: ElementRef | undefined;
   numbers: number[] = []; 
 
   constructor(private graphService: GraphService) {
@@ -38,7 +39,11 @@ export class CalculatorComponent{
 
   getValue() {
     console.log(this.lineGraph, this.barGraph)
-    
+  }
+
+  submitNumberHandler() {
+    let number = this.numberInput?.nativeElement.value
+    console.log(number)
   }
   
 
