@@ -1,10 +1,10 @@
 <div class="middleContent" style="margin-left: 20vw;">
-    <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
-        <h1> LOGIN </h1>
-        <label>username</label>
-        <input type="username" name="username" #usernameInput="ngModel" ngModel username required>
+    <form #registerForm="ngForm" (ngSubmit)="handleFormSubmit(registerForm)">
+        <h1> REGISTER </h1>
+        <label>email</label>
+        <input type="email" name="email" #emailInput="ngModel" ngModel email required>
         <label>password</label>
-        <input name="password" password type="password" ngModel>
+        <input name="password" password type="password" ngModel required>
         <button>LOGIN</button>
     </form>
     

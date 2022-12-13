@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,10 +11,19 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
 
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router) {};
+
   handleFormSubmit(form: NgForm) {
-    const value: {username: string, password: string} = form.value;
+    const data: {email: string, password: string} = form.value;
     if (form.invalid) {console.log("?");return;}
-    console.log(value.username, value.password)
-   
+    const httpOptions = {
+      withCredentials: true
+    };
+    this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true}).subscribe(res => {console.log(`${res}!!!!!!!!!!!!!!!!!!!!!!!!!!`)})
+    this.http.get('http://127.0.0.1:8000/api/user', {withCredentials: true}).subscribe(res => {console.log(res)})
+
   }
 }
