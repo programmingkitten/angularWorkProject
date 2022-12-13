@@ -8,6 +8,7 @@ from user_auth.models import User
 from user_auth.serializers import UserSerializer
 import jwt, datetime
 
+
 class registerView(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
@@ -42,3 +43,21 @@ class loginView(APIView):
             'jwt': token
         }
         return response
+
+
+class UserView(APIView):
+    def get(self, request):
+        token = request.COOKIES.get('jwt')
+        if not token:
+            raise AuthenticationFailed('Unauthenticated!')
+
+        try:
+            payload = jwt.decode(token, 'secret', algorithms=["HS256"])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed('Unauthenticated!')
+        userId = payload['id']
+        user = User.objects.filter(id=userId).first()
+        serializer = UserSerializer(user)
+        return Response({
+            'data': serializer.data
+        })
