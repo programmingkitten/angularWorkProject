@@ -7,9 +7,10 @@ from django.shortcuts import render
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
-
+from rest_framework.views import APIView
+from rest_framework.response import Response
 from app.models import UserTest
-from app.serializers import UserTestSerializer
+from app.serializers import UserTestSerializer, UserSerializer
 
 ...
 
@@ -17,6 +18,13 @@ from app.serializers import UserTestSerializer
 class homeView(views.TemplateView):
     template_name = 'index.html'
 
+
+class RegisterView(APIView):
+    def post(self, request):
+        serializer = UserSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
 
 @api_view(['POST'])
 def addUser(request, data):
