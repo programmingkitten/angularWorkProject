@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 LOCAL_APPS = [
-    'app',
 ]
 
 THIRD_PARTY = [
@@ -141,4 +140,3 @@ CORS_ORIGIN_WHITELIST = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'app.User'
