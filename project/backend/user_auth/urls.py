@@ -6,6 +6,7 @@ import user_auth.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register', views.registerView.as_view())
+    path('register', views.registerView.as_view()),
+    path('login', views.loginView.as_view())
 
 ]
