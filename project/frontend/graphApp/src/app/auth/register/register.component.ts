@@ -10,10 +10,14 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  user: {
+    'id': number,
+    'email': string
+  } | undefined;
   constructor(
     private http: HttpClient,
     private authService: AuthService,
-    private router: Router) {}
+    private router: Router) {};
 
   handleFormSubmit(form: NgForm) {
     const data: {email: string, password: string} = form.value;
@@ -22,8 +26,6 @@ export class RegisterComponent {
     .subscribe(res => {
       this.router.navigate(['/login'])
     })
-
-  
   }
 
   
