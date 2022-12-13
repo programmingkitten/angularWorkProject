@@ -5,10 +5,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+  
+  url = 'http://127.0.0.1:8000/api/'
+  constructor(private http: HttpClient) { }
 
-  constructor(http: HttpClient) { }
-
-  post() {
-    
+  post(apiUrl: string, data: any) {
+    this.http.post(this.url+apiUrl, data)
   }
 }
