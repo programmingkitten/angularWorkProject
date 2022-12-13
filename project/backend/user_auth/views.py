@@ -28,6 +28,14 @@ class loginView(APIView):
         elif not user.check_password(password):
             raise AuthenticationFailed('Incorrect password!')
 
+        payload = {
+            'id': user.id,
+            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=60),
+            'iat': datetime.datetime.utcnow()
+        }
+
+        token = jwt.encode(payload, 'secret', algorithm='HS256')
+
         return Response({
-            'message': f"Welcome {user}"
+            'jwt': token
         })
