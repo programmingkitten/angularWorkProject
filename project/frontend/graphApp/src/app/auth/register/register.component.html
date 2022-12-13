@@ -1,1 +1,11 @@
-<p>register works!</p>
+<div class="middleContent" style="margin-left: 20vw;">
+    <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
+        <h1> LOGIN </h1>
+        <label>username</label>
+        <input type="username" name="username" #usernameInput="ngModel" ngModel username required>
+        <label>password</label>
+        <input name="password" password type="password" ngModel>
+        <button>REGISTER</button>
+    </form>
+    
+</div>

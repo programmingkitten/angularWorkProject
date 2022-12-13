@@ -1,6 +1,7 @@
+from django.contrib.auth.views import LoginView
 from django.http import JsonResponse
 from django.shortcuts import render
-
+import django.views.generic as views
 # Create your views here.
 from django.shortcuts import render
 from rest_framework import status
@@ -11,6 +12,10 @@ from app.models import UserTest
 from app.serializers import UserTestSerializer
 
 ...
+
+
+class homeView(views.TemplateView):
+    template_name = 'index.html'
 
 
 @api_view(['POST'])
