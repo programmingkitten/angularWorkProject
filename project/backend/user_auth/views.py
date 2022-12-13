@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 from user_auth.models import User
 from user_auth.serializers import UserSerializer
-
+import jwt, datetime
 
 class registerView(APIView):
     def post(self, request):
