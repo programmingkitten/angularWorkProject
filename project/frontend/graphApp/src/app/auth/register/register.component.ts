@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
@@ -8,16 +10,21 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-  url = 'http://127.0.0.1:8000/api/'
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router) {}
 
   handleFormSubmit(form: NgForm) {
-    const value: {email: string, password: string} = form.value;
+    const data: {email: string, password: string} = form.value;
     if (form.invalid) {console.log("?");return;}
-    console.log(value.email, value.password)
+    this.authService.post('register', data)
+    .subscribe(res => {
+      this.router.navigate(['/login'])
+    })
+
+  
   }
 
-  post(apiUrl: string, data: any) {
-    this.http.post(this.url+apiUrl, data)
-  }
+  
 }

@@ -10,6 +10,6 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   post(apiUrl: string, data: any) {
-    this.http.post(this.url+apiUrl, data)
+    return this.http.post(this.url+apiUrl, data)
   }
 }
