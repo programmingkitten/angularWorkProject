@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Emitters } from 'src/app/emitters/emitters';
 import { AuthService } from '../auth.service';
-
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,24 +17,30 @@ export class LoginComponent {
     private authService: AuthService,
     private router: Router) {};
 
+  login(data: any) {
+    return this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true})
+  }
+ 
   handleFormSubmit(form: NgForm) {
     const data: {email: string, password: string} = form.value;
     if (form.invalid) {console.log("?");return;}
     const httpOptions = {
       withCredentials: true
     };
-    try {
-      this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true}).subscribe(res => 
-      {
-        console.log(`${res} Succesfull`);
-        this.authService.isLoggedIn()
-        this.router.navigate(['/home'])
+
+
+      this.login(data).subscribe({
+        next: (res) => {
+          console.log(res);
+          this.authService.isLoggedIn();
+          this.router.navigate(['home']);
+        },
+        error: (err) => {console.log(err)}
       });
     
-      this.authService.isLoggedIn()
-    } catch(err) {
-      console.log(err)
-      alert('ok')
+      this.authService.isLoggedIn();
+    
+    
+
     }
-  }
 }
