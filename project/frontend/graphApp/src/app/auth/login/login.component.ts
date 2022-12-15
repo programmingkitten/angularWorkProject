@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Emitters } from 'src/app/emitters/emitters';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -22,8 +23,15 @@ export class LoginComponent {
     const httpOptions = {
       withCredentials: true
     };
-    this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true}).subscribe(res => {console.log(`${res}!!!!!!!!!!!!!!!!!!!!!!!!!!`)})
-    this.http.get('http://127.0.0.1:8000/api/user', {withCredentials: true}).subscribe(res => {console.log('USER', res)})
+    this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true}).subscribe(res => 
+    {
+      console.log(`${res} Succesfull`);
+      this.authService.isLoggedIn()
+      this.router.navigate(['/home'])
+    });
+  
+    this.authService.isLoggedIn()
 
+    
   }
 }

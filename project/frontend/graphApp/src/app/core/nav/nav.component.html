@@ -17,12 +17,17 @@
         <ul>
             <li><a routerLink="/home" id="home">HOME</a></li>
             <li><a routerLink="/about" id="about">ABOUT</a></li>
-            <li><a routerLink="/contacts" id="contacts">CONTACTS</a></li>
-            <li><a href="/calculator" id="calculator">CALCULATOR</a></li>
-            <li><a href="#" id="PRICING">INTERESTING STATISTICS</a></li>
-            <li><a href="/login" id="PRICING">LOGIN</a></li>
-            <li><a routerLink="/register" id="PRICING">REGISTER</a></li>
-            <h1 style="color: white" *ngIf="user">LOGGED IN</h1>
+            <div *ngIf="authenticated">
+                <li><a routerLink="/contacts" id="contacts">CONTACTS</a></li>
+                <li><a href="/calculator" id="calculator">CALCULATOR</a></li>
+                <li><a href="#" id="PRICING">INTERESTING STATISTICS</a></li>
+                <li><a href="#" id="PRICING">LOGOUT</a></li>
+            </div>
+            
+            <div *ngIf="!authenticated">
+                <li><a routerLink="/register" id="PRICING">REGISTER</a></li>
+                <li><a href="/login" id="PRICING">LOGIN</a></li>
+            </div>
         </ul>
     </div>
 

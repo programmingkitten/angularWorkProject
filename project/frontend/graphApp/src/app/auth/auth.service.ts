@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Emitters } from '../emitters/emitters';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +21,20 @@ export class AuthService {
   getUser() {
     return this.http.get(this.url + 'user').subscribe()
   }
-}
+
+  isLoggedIn(): false | undefined {
+    try {
+      this.http.get('http://127.0.0.1:8000/api/user', {withCredentials: true}).subscribe(res => {
+        
+        console.log('USER', res); 
+        Emitters.authEmitter.emit(true);
+        return true
+      }) 
+    } catch(err) {
+      Emitters.authEmitter.emit(false);
+      return false
+    };
+
+    return false;
+  };
+};
