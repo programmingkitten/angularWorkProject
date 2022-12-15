@@ -23,6 +23,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
         component: NotFoundComponent,
       }
                           ]),
-        ]
+          ]
 })
 export class ErrorsModule { }

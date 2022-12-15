@@ -5,9 +5,6 @@ import { CalculatorComponent } from './graph/calculator/calculator.component';
 import { AboutComponent } from './main/about/about.component';
 import { ContactComponent } from './main/contact/contact.component';
 import { IndexComponent } from './main/index/index.component';
-import { AddUserComponent } from './user/add-user/add-user.component';
-import { UserDetailsComponent } from './user/user-details/user-details.component';
-import { UserListComponent } from './user/user-list/user-list.component';
 
 
 const routes: Routes = [
@@ -43,17 +40,10 @@ const routes: Routes = [
   },
 
   {
-    path: 'users/list', 
-    component: UserListComponent,
-  },
-
-  {
-    path: 'users/:id', component: UserDetailsComponent,
-  },
-
-  {
-    path: 'users/add', component: AddUserComponent,
+    path: '**',
+    redirectTo: 'not-found'
   }
+
 ];
 
 @NgModule({
