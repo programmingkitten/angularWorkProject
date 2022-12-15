@@ -1,0 +1,40 @@
+.sideBar {
+    width: 38vw;
+
+}
+
+body {
+    font-family: 'poppins';
+}
+
+.sideBar h1 {
+    color: rgba(255, 255, 255, 0.521);    
+    
+}
+
+.sideBar .content {
+    margin-top: 15vh;
+}
+
+.content li {
+    color: indianred;
+    margin-bottom: 1.5vh;
+    font-size: calc(.8vw + .8em);
+}
+
+.middleContent {
+    background-image: url('/assets/images/middleBg.jpg');
+    background-position: center;
+}
+
+.errorMessage {
+    text-align: center;
+    font-size: calc(1.2vw + 1.2em);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(127, 5, 5);
+    margin-top: 35vh;
+}
+
+.errorMessage h1 {
+    -webkit-text-stroke: 4px black
+}
