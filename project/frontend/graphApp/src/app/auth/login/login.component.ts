@@ -19,9 +19,7 @@ export class LoginComponent {
     private authService: AuthService,
     private router: Router) {};
 
-  login(data: any) {
-    return this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true})
-  }
+  
  
   handleFormSubmit(form: NgForm) {
     const data: {email: string, password: string} = form.value;
@@ -31,7 +29,7 @@ export class LoginComponent {
     };
 
 
-      this.login(data).subscribe({
+      this.authService.login(data).subscribe({
         next: (res) => {
           console.log(res);
           this.authService.isLoggedIn();
