@@ -5,12 +5,16 @@ import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
+import { AuthInterceptorProvider } from './auth-interceptor';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     LogoutComponent
+  ],
+  providers: [
+    AuthInterceptorProvider
   ],
   imports: [
     CommonModule,
