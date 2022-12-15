@@ -1,3 +1,7 @@
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400&lang=en">
+
+
 <nav>
     <div class="imgBorder">
         <img src="assets/images/Capture.JPG" />
@@ -16,6 +20,9 @@
             <li><a routerLink="/contacts" id="contacts">CONTACTS</a></li>
             <li><a href="/calculator" id="calculator">CALCULATOR</a></li>
             <li><a href="#" id="PRICING">INTERESTING STATISTICS</a></li>
+            <li><a href="/login" id="PRICING">LOGIN</a></li>
+            <li><a routerLink="/register" id="PRICING">REGISTER</a></li>
+            <h1 style="color: white" *ngIf="user">LOGGED IN</h1>
         </ul>
     </div>
 

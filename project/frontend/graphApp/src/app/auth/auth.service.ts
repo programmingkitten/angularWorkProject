@@ -16,4 +16,8 @@ export class AuthService {
   get(apiUrl: string) {
     return this.http.get(this.url + apiUrl)
   }
+
+  getUser() {
+    return this.http.get(this.url + 'user').subscribe()
+  }
 }

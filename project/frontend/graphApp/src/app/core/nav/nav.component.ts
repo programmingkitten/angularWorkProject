@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
+  
+  user: any | undefined
+  constructor(private authService: AuthService) {
+  }
 
+    
+  
 }

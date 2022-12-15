@@ -1,11 +1,30 @@
-<div class="middleContent" style="margin-left: 20vw;">
-    <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
-        <h1> LOGIN </h1>
-        <label>username</label>
-        <input type="email" name="email" #emailInput="ngModel" ngModel email required>
-        <label>password</label>
-        <input name="password" password type="password" ngModel required>
-        <button>REGISTER</button>
-    </form>
-    
-</div>
+<body>
+    <div class="middleContent" style="">
+            <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
+                <h1> REGISTER </h1>
+                <label>username</label>
+                <input type="email" name="email" #emailInput="ngModel" ngModel email required>
+                <label>password</label>
+                <input name="password" password type="password" ngModel required>
+                <button>SUBMIT</button>
+            </form>
+            
+        </div>
+
+    <div class="sideBar">
+        <div class="content">
+            <h1> COLATZ </h1>
+            <h2> REGISTER PAGE </h2>
+            <div class="text"> 
+                <p> 
+                    REQUIRMENTS<br> <br>
+                    <span>Valid email</span><br><br>
+                    <span>*Password must cotain at least 12 characters</span><br><br>
+                    <span>*Password must contain at least one: letter, number</span>
+                </p> 
+            </div>  
+
+            <button> Show me the app </button> 
+        </div>
+    </div>
+</body> 

@@ -23,7 +23,7 @@ export class LoginComponent {
       withCredentials: true
     };
     this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true}).subscribe(res => {console.log(`${res}!!!!!!!!!!!!!!!!!!!!!!!!!!`)})
-    this.http.get('http://127.0.0.1:8000/api/user', {withCredentials: true}).subscribe(res => {console.log(res)})
+    this.http.get('http://127.0.0.1:8000/api/user', {withCredentials: true}).subscribe(res => {console.log('USER', res)})
 
   }
 }

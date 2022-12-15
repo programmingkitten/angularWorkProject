@@ -1,0 +1,48 @@
+
+body {
+    background-image: url('/assets/images/login-register-bg.jpg');
+}
+
+h1 {
+    color: red($color: #000000);
+}
+
+.middleContent {
+    margin-top: 20vh;
+    margin-left: 5.8vw;
+}
+
+.middleContent input {
+    display: block;
+}
+
+.middleContent h1 {
+    color: indianred;
+    font-size: calc(2vw + 2em);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-left: 8vw;
+}
+
+.middleContent input {
+    border: none;
+    border: 3px solid rgb(176, 22, 22);
+    background-color: transparent;
+    font-size: calc(.7vw + .7em);
+    width: 70%;
+    padding: 1vh;
+    color:burlywood;
+}
+
+.middleContent button {
+    font-size: calc(1.2vw + 1.2em);
+    margin-top: 8vh;
+    margin-left: 9vw;
+    font-family: cursive, fantasy, sans-serif;
+    border-radius: 10%;
+}
+
+.middleContent label {
+    color:rgb(192, 107, 74);
+    font-size: calc(1vw + 1em);
+    padding-bottom: 1vh;
+}
