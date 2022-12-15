@@ -1,11 +1,31 @@
+
+<ng-template #descriptionTemplate>
+    <form #description="ngForm" (ngSubmit)="submitFormHandler(description, 'description')">
+    <label>description</label>
+    <input name="description" description required>
+    <button>Change</button>
+    </form>
+</ng-template>
+
+<ng-template #imageTemplate>
+    <form #imageForm="ngForm" (ngSubmit)="submitFormHandler(imageForm, 'image')">
+    <label>description</label>
+    <input name="description" description required>
+    <button>Change</button>
+    </form>
+</ng-template>
+
+
 <body>
     <div class="middleContent">
         <div class="backgroundImg">
         </div>
         <div class="errorMessage">
             <h1> Welcome {{user.email}} </h1>
-            
         </div>
+
+        <ng-container *ngIf="false else descriptionTemplate"></ng-container>
+        <ng-container *ngIf="false else imageTemplate"></ng-container>
     </div>
 
     <div class="sideBar">

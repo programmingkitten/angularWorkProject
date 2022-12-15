@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 import { IUser } from '../user-interface';
 
@@ -29,4 +30,8 @@ export class ProfileComponent implements OnInit{
   handleUserData(data: any) {
     this.user.email = data.data.email.split('@')[0];
   };
+
+  submitFormHandler(form: NgForm, APIurl: string) {
+    console.log(form.value)
+  }
 };
