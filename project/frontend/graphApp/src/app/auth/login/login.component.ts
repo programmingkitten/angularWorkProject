@@ -12,6 +12,8 @@ import { Subscription } from 'rxjs';
 })
 export class LoginComponent {
 
+  error: string = '';
+
   constructor(
     private http: HttpClient,
     private authService: AuthService,
@@ -35,7 +37,8 @@ export class LoginComponent {
           this.authService.isLoggedIn();
           this.router.navigate(['home']);
         },
-        error: (err) => {console.log(err)}
+        error: (err) => {
+          console.log(err); this.error = err}
       });
     
       this.authService.isLoggedIn();

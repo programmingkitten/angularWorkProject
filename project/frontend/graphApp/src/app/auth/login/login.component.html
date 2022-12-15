@@ -4,6 +4,7 @@
 <div class="middleContent" style="">
     <form #registerForm="ngForm" (ngSubmit)="handleFormSubmit(registerForm)">
         <h1> LOGIN </h1>
+        <h2 id="error" *ngIf="error">{{error}}</h2>
         <label>email</label>
         <input type="email" name="email" #emailInput="ngModel" ngModel email required>
         <label>password</label>
