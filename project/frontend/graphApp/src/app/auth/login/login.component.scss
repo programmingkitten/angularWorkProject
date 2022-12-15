@@ -29,24 +29,25 @@ h1 {
 
 .middleContent input {
     border: none;
-    border: 3px solid rgb(176, 22, 22);
+    border-bottom: 3px solid rgba(3, 52, 116, 0.244);
     background-color: transparent;
     font-size: calc(.7vw + .7em);
     width: 70%;
     padding: 1vh;
     color:burlywood;
+    margin-bottom: 5vh;
 }
 
 .middleContent button {
     font-size: calc(1.2vw + 1.2em);
-    margin-top: 8vh;
+    margin-top: 1vh;
     margin-left: 9vw;
     font-family: cursive, fantasy, sans-serif;
     border-radius: 10%;
 }
 
 .middleContent label {
-    color:rgb(192, 107, 74);
+    color:rgba(193, 15, 15, 0.564);
     font-size: calc(1vw + 1em);
     padding-bottom: 1vh;
 }

@@ -3,6 +3,11 @@ body {
     background-image: url('/assets/images/login-register-bg.jpg');
 }
 
+body {
+    font-family: cursive;
+}
+
+
 h1 {
     color: red($color: #000000);
 }
@@ -16,41 +21,41 @@ h1 {
     display: block;
 }
 
-body {
-    font-family: cursive;
-}
-
 .middleContent h1 {
     color: indianred;
-    font-size: calc(1.1vw + 1.1em);
-    font-family: cursive;
+    font-size: calc(1.3vw + 1.3em);
     margin-left: 8vw;
 }
 
 .middleContent input {
     border: none;
-    border: 3px solid rgb(176, 22, 22);
+    border-bottom: 3px solid rgba(3, 52, 116, 0.244);
     background-color: transparent;
     font-size: calc(.7vw + .7em);
     width: 70%;
     padding: 1vh;
     color:burlywood;
+    margin-bottom: 5vh;
 }
 
 .middleContent button {
     font-size: calc(1.2vw + 1.2em);
-    margin-top: 8vh;
+    margin-top: 1vh;
     margin-left: 9vw;
     font-family: cursive, fantasy, sans-serif;
     border-radius: 10%;
 }
 
+.middleContent button:hover {
+    background-color: rgba(138, 207, 239, 0.765);
+}
+
 .middleContent label {
-    color:rgb(192, 107, 74);
+    color:rgba(193, 15, 15, 0.564);
     font-size: calc(1vw + 1em);
     padding-bottom: 1vh;
 }
 
-.content {
-    margin-top: 20vh;
+#error {
+    color: rgb(138, 39, 39);
 }
