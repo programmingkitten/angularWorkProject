@@ -33,7 +33,7 @@ export class LoginComponent {
         next: (res) => {
           console.log(res);
           this.authService.isLoggedIn();
-          this.router.navigate(['home']);
+          this.router.navigate(['/']);
         },
         error: (err) => {
           console.log(err); this.error = err}

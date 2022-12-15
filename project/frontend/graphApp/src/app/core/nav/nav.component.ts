@@ -13,12 +13,17 @@ export class NavComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.authService.isLoggedIn()
     Emitters.authEmitter.subscribe(
       (auth: boolean) => {
         this.authenticated = auth
       }
     )
+
+    this.authService.isLoggedIn().subscribe({
+      next: () => Emitters.authEmitter.emit(true),
+      error: (err) => console.log(err.error),
+    })
+
   }
 
 }
