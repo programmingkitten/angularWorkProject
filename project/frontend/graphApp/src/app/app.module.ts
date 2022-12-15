@@ -16,14 +16,14 @@ import { ErrorsModule } from './errors/errors.module';
   ],
   imports: [
     BrowserModule,
+    AuthModule,
     AppRoutingModule,
+    ErrorsModule,
     UserModule,
     FormsModule,
     HttpClientModule,
     CoreModule,
-    AuthModule,
     FormsModule,
-    ErrorsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
