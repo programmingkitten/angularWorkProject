@@ -24,9 +24,7 @@ export class AuthService {
 
   isLoggedIn(): false | undefined {
     try {
-      this.http.get('http://127.0.0.1:8000/api/user', {withCredentials: true}).subscribe(res => {
-        
-        console.log('USER', res); 
+        this.http.get('http://127.0.0.1:8000/api/user', {withCredentials: true}).subscribe(res => {
         Emitters.authEmitter.emit(true);
         return true
       }) 

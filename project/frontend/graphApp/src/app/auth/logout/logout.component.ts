@@ -23,11 +23,7 @@ export class LogoutComponent {
       res => {
         console.log(res)
         Emitters.authEmitter.emit(false)
-        this.authService.isLoggedIn();
-
       })
-    Emitters.authEmitter.emit(false)
-    this.authService.isLoggedIn();
     this.router.navigate(['home'])
 
   }

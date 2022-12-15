@@ -23,15 +23,18 @@ export class LoginComponent {
     const httpOptions = {
       withCredentials: true
     };
-    this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true}).subscribe(res => 
-    {
-      console.log(`${res} Succesfull`);
-      this.authService.isLoggedIn()
-      this.router.navigate(['/home'])
-    });
-  
-    this.authService.isLoggedIn()
-
+    try {
+      this.http.post('http://127.0.0.1:8000/api/login', data, {withCredentials: true}).subscribe(res => 
+      {
+        console.log(`${res} Succesfull`);
+        this.authService.isLoggedIn()
+        this.router.navigate(['/home'])
+      });
     
+      this.authService.isLoggedIn()
+    } catch(err) {
+      console.log(err)
+      alert('ok')
+    }
   }
 }
