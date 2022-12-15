@@ -21,6 +21,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
       {
         'path': 'not-found',
         component: NotFoundComponent,
+      },
+      {
+        'path': '**',
+        redirectTo: 'not-found',
       }
                           ]),
           ]
