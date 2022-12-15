@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthInterceptorProvider } from './auth-interceptor';
+import { AuthGuard } from '../auth-guard';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { AuthInterceptorProvider } from './auth-interceptor';
 
       {'path': 'logout',
       component: LogoutComponent,
+      canActivate: [AuthGuard],
+
       },
 
      

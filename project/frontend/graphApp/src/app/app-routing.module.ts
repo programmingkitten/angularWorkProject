@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Injectable, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth-guard';
 import { CalculatorComponent } from './graph/calculator/calculator.component';
@@ -25,18 +25,21 @@ const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
-    canActivate: [AuthGuard],
 
   },
 
   {
     path: 'calculator',
     component: CalculatorComponent,
+    canActivate: [AuthGuard],
+
   },
 
   {
     path: 'contacts',
     component: ContactComponent,
+    canActivate: [AuthGuard],
+
   },
 
   {
