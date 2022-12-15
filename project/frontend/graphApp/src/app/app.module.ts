@@ -9,6 +9,7 @@ import { UserService } from './services/user.service';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { ErrorsModule } from './errors/errors.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ErrorsModule } from './errors/errors.module';
     HttpClientModule,
     CoreModule,
     FormsModule,
+    UsersModule,
     ErrorsModule,
 
   ],
