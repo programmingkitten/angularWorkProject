@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
         return this.authService.isLoggedIn().pipe(map(res => {
             return true;
         }), catchError(() => {
-            return of(this.router.createUrlTree(['/home']));
+            return of(this.router.createUrlTree(['/no-access']));
         }));
 
     }
