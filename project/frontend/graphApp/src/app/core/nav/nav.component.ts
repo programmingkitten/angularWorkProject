@@ -21,7 +21,7 @@ export class NavComponent implements OnInit{
 
     this.authService.isLoggedIn().subscribe({
       next: () => Emitters.authEmitter.emit(true),
-      error: (err) => console.log(err.error),
+      error: (err) => console.log(err.error), 
     })
 
   }
