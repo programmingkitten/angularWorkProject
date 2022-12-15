@@ -8,6 +8,7 @@ import { UserModule } from './user/user.module';
 import { UserService } from './services/user.service';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
+import { ErrorsModule } from './errors/errors.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AuthModule } from './auth/auth.module';
     CoreModule,
     AuthModule,
     FormsModule,
+    ErrorsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
