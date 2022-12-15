@@ -4,11 +4,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
@@ -22,6 +24,10 @@ import { FormsModule } from '@angular/forms';
       {
         'path': 'register',
         component: RegisterComponent,
+      },
+
+      {'path': 'logout',
+      component: LogoutComponent,
       },
 
      
