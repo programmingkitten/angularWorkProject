@@ -98,12 +98,15 @@ class UserView(APIView):
         if 'id' in request.data.keys():
             userId = request.data['id']
         else:
-            return Response({'error': 'not found'})
+            return Response({'error': 'not found',
+                             'data': 'empty'})
         user = User.objects.filter(id=userId).first()
         if (not user):
             return Response({'error': 'not found'})
         serializer = UserSerializer(user)
-        return Response({'s': serializer.data})
+        return Response({'data': serializer.data,
+                         'error': False
+                         })
 
 class LogoutView(APIView):
     def post(self, request):
