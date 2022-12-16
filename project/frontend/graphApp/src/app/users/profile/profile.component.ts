@@ -50,6 +50,7 @@ export class ProfileComponent implements OnInit{
 
   submitFormHandler(form: NgForm) {
     const value: {description: string, imageURL: string} = form.value;
-    console.log(value, this.imageURLString)
+    const data = {'description': form.value.description, imageURL: this.imageURLString};
+    this.authService.put('user', data)
   }
 };

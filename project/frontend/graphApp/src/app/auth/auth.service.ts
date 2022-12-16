@@ -14,6 +14,10 @@ export class AuthService {
   post(apiUrl: string, data?: any, withCredentials?: boolean) {
     return this.http.post(this.url+apiUrl, data, {withCredentials: withCredentials})
   }
+  
+  put(apiUrl: string, data?: any) {
+    return this.http.put(this.url+apiUrl, data, {withCredentials: true})
+  }
 
   get(apiUrl: string) {
     return this.http.get(this.url + apiUrl)
