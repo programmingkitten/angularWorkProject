@@ -1,13 +1,16 @@
 
 <ng-template #descriptionTemplate>
-    <form #description="ngForm" (ngSubmit)="submitFormHandler(description, 'description')">
+    <form #description="ngForm" (ngSubmit)="submitFormHandler(description)">
     <label>description</label>
-    <textarea name="description" description></textarea>    
+    <textarea name="description" description #description="ngModel" ngModel placeholder="NOT REQUIRED"></textarea>    
     <label>image url</label>
-    <input name="description" description>
-    <button id="profileBtn">Change</button>
+    <input name="imageURL" #imageURL placeholder="NOT REQUIRED">
+    <a *ngIf="!userConfirmData" href="#" (click)="confirmDataHandler($event)">Submit</a>
+    
+    <button *ngIf="userConfirmData" id="profileBtn">Change</button>
     </form>
 </ng-template>
+
 
 <body>
     <div class="middleContent">
@@ -17,7 +20,10 @@
             <div *ngIf="welcomePageUrl" class="errorMessage">
                 <h1> Welcome {{user.email}} </h1>
             </div>
-
+            <div *ngIf="imageURLString!.length > 40">
+                <h1>Are you sure thats your picture?</h1>
+                <img src="{{imageURLString}}">
+            </div>
             <ng-container *ngIf="hideEditProfileUrl else descriptionTemplate"></ng-container>
         </div>
     </div>

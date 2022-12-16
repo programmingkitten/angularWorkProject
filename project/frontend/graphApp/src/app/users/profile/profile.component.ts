@@ -9,17 +9,26 @@ import { IUser } from '../user-interface';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit{
+  @ViewChild('imageURL') imageURLEl!: ElementRef;
   user: IUser = {
     'email': '',
   };
   hideEditProfileUrl: boolean = true;
   welcomePageUrl: boolean = true;
+  userConfirmData: boolean = false;
+  imageURLString: string = 'ok';
 
   constructor(private authService: AuthService) {}
   
   ngOnInit(): void {
     this.setUser();
   };
+
+  confirmDataHandler(ev: Event) {
+    ev.preventDefault();
+    this.imageURLString = this.imageURLEl.nativeElement.value;
+    this.userConfirmData = true;
+  }
 
   editProfile() {
     this.welcomePageUrl = false;
@@ -39,7 +48,8 @@ export class ProfileComponent implements OnInit{
     this.user.email = data.data.email.split('@')[0];
   };
 
-  submitFormHandler(form: NgForm, APIurl: string) {
-    console.log(form.value)
+  submitFormHandler(form: NgForm) {
+    const value: {description: string, imageURL: string} = form.value;
+    console.log(value, this.imageURLString)
   }
 };

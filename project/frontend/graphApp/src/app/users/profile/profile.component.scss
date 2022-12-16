@@ -26,6 +26,7 @@ body {
     background-image: url('/assets/images/middleBg.jpg');
     background-position: center;
     text-align: center;
+    padding-bottom: 10vh;
 }
 
 .errorMessage {
@@ -53,7 +54,7 @@ textarea {
 label {
     color: indianred;
     display: block;
-    margin-top: 5vh;
+    margin-top: 2vh;
     font-size: calc(1vw + 1em);
     -webkit-text-stroke: 1.4px black
 }
@@ -64,6 +65,7 @@ input {
     border: 2px solid rgba(128, 128, 128, 0.347);
     outline: none;
     color: coral;
+    height: 5vh;
 }
 
 #profileBtn {
@@ -78,4 +80,34 @@ input {
 .middleContent .content  {
     margin-top: 15vh;
     margin-left: 1px;
+}
+
+::placeholder {
+    color: rgb(153, 5, 5);
+    -webkit-text-stroke: 1.4px black;
+    font-size: calc(.8vw + .8em);
+}
+
+.middleContent a {
+    display: block;
+    text-decoration: none;
+    font-size: calc(1.9vw + 1.9em);
+    color: rgb(232, 232, 16);
+    -webkit-text-stroke: 3px black;
+
+}
+
+.middleContent img {
+    width: 20vw;
+    border-radius: 100%;
+    background-color: transparent;
+}
+
+.middleContent {
+    overflow-y: auto;
+    overflow-x: none;
+}
+
+.middleContent h1 {
+    color: orange;
 }

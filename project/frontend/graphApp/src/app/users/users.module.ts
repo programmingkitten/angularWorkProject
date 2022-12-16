@@ -13,16 +13,17 @@ import { AuthGuard } from '../auth-guard';
   declarations: [
     ProfileComponent,
     FeedbackComponent,
-    FeedbackDetailsComponent
+    FeedbackDetailsComponent,
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild([
       {path:'profile', component:ProfileComponent, canActivate: [AuthGuard]},
       {path:'feedback-list', component: FeedbackComponent, canActivate: [AuthGuard]},
       {path:'feedback-detais/:id', component: FeedbackDetailsComponent, canActivate: [AuthGuard]}
     ]),
-    FormsModule,
+   
   ]
 })
 export class UsersModule { }
