@@ -4,6 +4,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed, ValidationError
+import rest_framework.exceptions as ex
 from user_auth.models import User
 from user_auth.serializers import UserSerializer
 import jwt, datetime
@@ -46,6 +47,17 @@ class loginView(APIView):
 
 
 class UserView(APIView):
+
+    def checkCookie(self, request):
+        token = request.COOKIES.get('jwt')
+        if not token:
+            raise AuthenticationFailed('Unauthenticated!')
+
+        try:
+            payload = jwt.decode(token, 'secret', algorithms=["HS256"])
+        except jwt.ExpiredSignatureError:
+            raise AuthenticationFailed('Unauthenticated!')
+
     def get(self, request):
         token = request.COOKIES.get('jwt')
         if not token:
@@ -81,6 +93,17 @@ class UserView(APIView):
             return Response(serializer.data)
         raise ValidationError
 
+    def post(self, request):
+        self.checkCookie(request)
+        if 'id' in request.data.keys():
+            userId = request.data['id']
+        else:
+            return Response({'error': 'not found'})
+        user = User.objects.filter(id=userId).first()
+        if (not user):
+            return Response({'error': 'not found'})
+        serializer = UserSerializer(user)
+        return Response({'s': serializer.data})
 
 class LogoutView(APIView):
     def post(self, request):
