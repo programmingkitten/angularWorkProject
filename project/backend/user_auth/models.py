@@ -8,7 +8,8 @@ class User(AbstractUser):
     email = models.EmailField(max_length=255, unique=True)
     password = models.CharField(max_length=255)
     description = models.CharField(max_length=255, null=True, blank=True)
-    imageURL = models.URLField(null=True, blank=True)
+    imageURL = models.CharField(max_length=400, null=True, blank=True, default='no image')
+    picture = models.CharField(max_length=255, null=True, blank=True, default="no image")
     username = None
 
     USERNAME_FIELD = 'email'
