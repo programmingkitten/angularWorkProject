@@ -1,5 +1,6 @@
 .sideBar {
     width: 38vw;
+    height: 150vh;
 
 }
 
@@ -13,7 +14,8 @@ body {
 }
 
 .sideBar .content {
-    margin-top: 15vh;
+    float: left;
+    margin-top: 23vh;
 }
 
 .content li {

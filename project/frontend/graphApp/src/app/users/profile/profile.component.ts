@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { IUser } from '../user-interface';
 
@@ -10,6 +11,7 @@ import { IUser } from '../user-interface';
 })
 export class ProfileComponent implements OnInit{
   @ViewChild('imageURL') imageURLEl!: ElementRef;
+  @ViewChild('descriptionForm') descriptionForm!: ElementRef;
   user: IUser = {
     'email': '',
   };
@@ -18,7 +20,7 @@ export class ProfileComponent implements OnInit{
   userConfirmData: boolean = false;
   imageURLString: string = 'ok';
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
   
   ngOnInit(): void {
     this.setUser();
@@ -45,12 +47,22 @@ export class ProfileComponent implements OnInit{
   };
 
   handleUserData(data: any) {
-    this.user.email = data.data.email.split('@')[0];
+    const extractedData = data.data
+    this.user.email = extractedData.email.split('@')[0];
+    this.user.description = extractedData.description;
+    this.user.imageURL = extractedData.imageURL;
+    console.log(this.user)
   };
 
   submitFormHandler(form: NgForm) {
     const value: {description: string, imageURL: string} = form.value;
-    const data = {'description': form.value.description, imageURL: this.imageURLString};
-    this.authService.put('user', data)
+    const data = {'description': this.descriptionForm.nativeElement.value, imageURL: this.imageURLString};
+      this.authService.put('user', data).subscribe({
+      next: (res) => {
+        this.router.navigate(['home'])
+        console.log("NAVIGATED")
+      },
+      error: (err) => console.log('error'),
+    })
   }
 };

@@ -2,9 +2,9 @@
 <ng-template #descriptionTemplate>
     <form #description="ngForm" (ngSubmit)="submitFormHandler(description)">
     <label>description</label>
-    <textarea name="description" description #description="ngModel" ngModel placeholder="NOT REQUIRED"></textarea>    
+    <textarea name="description" #descriptionForm descriptionForm placeholder="NOT REQUIRED" >{{user.description}}</textarea>  
     <label>image url</label>
-    <input name="imageURL" #imageURL placeholder="NOT REQUIRED">
+    <input name="imageURL" value="{{user.imageURL}}" #imageURL placeholder="NOT REQUIRED">
     <a *ngIf="!userConfirmData" href="#" (click)="confirmDataHandler($event)">Submit</a>
     
     <button *ngIf="userConfirmData" id="profileBtn">Change</button>
@@ -35,7 +35,7 @@
             <div class="text"> 
                 <h1> You have access to the following settings  </h1>
                 <ul>
-                    <li (click)="editProfile()" #description>Edit your profile</li>
+                    <li (click)="editProfile()">Edit your profile</li>
                     <li #feedback>Check your feedback messages  </li>
                 </ul>
             </div>  
