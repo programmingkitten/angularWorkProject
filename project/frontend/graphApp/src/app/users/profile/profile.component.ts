@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 import { IUser } from '../user-interface';
@@ -12,11 +12,19 @@ export class ProfileComponent implements OnInit{
   user: IUser = {
     'email': '',
   };
+  hideEditProfileUrl: boolean = true;
+  welcomePageUrl: boolean = true;
+
   constructor(private authService: AuthService) {}
   
   ngOnInit(): void {
     this.setUser();
   };
+
+  editProfile() {
+    this.welcomePageUrl = false;
+    this.hideEditProfileUrl = false;
+  }
 
   setUser() {
     const data = this.authService.isLoggedIn().subscribe(
