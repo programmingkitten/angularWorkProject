@@ -26,6 +26,17 @@ export class ProfileComponent implements OnInit{
     this.setUser();
   };
 
+
+  viewProfile() {
+    this.authService.isLoggedIn().subscribe({
+      next: (res) => {
+        const resCloned: any = res;
+        console.log(resCloned.data.id)
+        this.router.navigate([`profile/${resCloned.data.id}`])
+      }
+    })
+  }
+
   confirmDataHandler(ev: Event) {
     ev.preventDefault();
     this.imageURLString = this.imageURLEl.nativeElement.value;

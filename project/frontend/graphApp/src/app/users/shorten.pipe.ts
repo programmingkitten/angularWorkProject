@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ShortenPipe implements PipeTransform {
 
   transform(value: string, length: number): unknown {
-    return value.length > length ? `${value.substring(0, length)} ...` : value
+    return value?.length > length ? `${value.substring(0, length)} ...` : value
   }
 
 }

@@ -3,9 +3,9 @@
     <div class="backgroundImg">
     </div>
     <div class="errorMessage">
-        <h1> {{user!.email | email | shorten: 11}}</h1>
-        <img [src]="user!.imageURL != null ? user!.imageURL : 'https://i.pinimg.com/736x/22/71/48/22714827862d17e1a1a78bd344bfc5fc.jpg'">
-        <button class="button">MESSAGE</button>
+        <h1> {{user?.email | email | shorten: 11}}</h1>
+        <img [src]="user?.imageURL != null ? user?.imageURL : 'https://i.pinimg.com/736x/22/71/48/22714827862d17e1a1a78bd344bfc5fc.jpg'">
+        <button class="button" *ngIf="!currentUserProfile">MESSAGE</button>
     </div>
 </div>
 
@@ -23,6 +23,6 @@
             </ul>
         </div>  
 
-        <button> ADD AS A FRIEND </button> 
+        <button *ngIf="!currentUserProfile"> ADD AS A FRIEND </button> 
     </div>
 </div>

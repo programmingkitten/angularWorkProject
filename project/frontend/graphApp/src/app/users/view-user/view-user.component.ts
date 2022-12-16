@@ -10,12 +10,26 @@ import { IUser } from '../user-interface';
 })
 export class ViewUserComponent implements OnInit{
   user: IUser | undefined;
+  currentUserProfile: boolean = false;
   constructor(private authService: AuthService, private activatedRoute: ActivatedRoute, private router: Router) {}
   ngOnInit(): void {
     this.getUser();
+    this.ownPage();
   }
 
-  
+  ownPage() {
+    const userID = this.activatedRoute.snapshot.params['id'];
+    const result = this.authService.isLoggedIn().subscribe({
+      next: (res) => {
+        const resCloned: any = res;
+        if (resCloned.data.id == userID) {
+          this.currentUserProfile = true;
+        } else {
+          this.currentUserProfile = false;
+        }
+      }
+    })
+  }
 
   getUser() {
     const userID = this.activatedRoute.snapshot.params['id'];
