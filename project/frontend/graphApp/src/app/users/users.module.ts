@@ -5,6 +5,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { RouterModule } from '@angular/router';
 import { FeedbackDetailsComponent } from './feedback-details/feedback-details.component';
 import { FormsModule } from '@angular/forms';
+import { AuthGuard } from '../auth-guard';
 
 
 
@@ -17,9 +18,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule.forChild([
-      {path:'profile', component:ProfileComponent},
-      {path:'feedback-list', component: FeedbackComponent},
-      {path:'feedback-detais/:id', component: FeedbackDetailsComponent}
+      {path:'profile', component:ProfileComponent, canActivate: [AuthGuard]},
+      {path:'feedback-list', component: FeedbackComponent, canActivate: [AuthGuard]},
+      {path:'feedback-detais/:id', component: FeedbackDetailsComponent, canActivate: [AuthGuard]}
     ]),
     FormsModule,
   ]
