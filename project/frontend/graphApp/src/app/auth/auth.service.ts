@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   post(apiUrl: string, data?: any, withCredentials?: boolean) {
-    return this.http.post(this.url+apiUrl, data, {withCredentials: withCredentials})
+    return this.http.post(this.url+apiUrl, data, {withCredentials: true})
   }
   
   put(apiUrl: string, data?: any) {
