@@ -3,25 +3,26 @@
     <div class="backgroundImg">
     </div>
     <div class="errorMessage">
-        <h1> ACCESS DENIED</h1>
-        
+        <h1> {{user!.email | email | shorten: 11}}</h1>
+        <img [src]="user!.imageURL != null ? user!.imageURL : 'https://i.pinimg.com/736x/22/71/48/22714827862d17e1a1a78bd344bfc5fc.jpg'">
+        <button class="button">MESSAGE</button>
     </div>
 </div>
 
 <div class="sideBar">
     <div class="content">
-        <h1> COLATZ </h1>
-        <h2> Oops :( ! We encountered an error </h2>
+        <h1> DESCRIPTION </h1>
+        <h2>  {{user?.description || 'no desc'}}</h2>
         <div class="text"> 
-            <h1> Reasons you could get into this page</h1>
+            <h1></h1>
             <ul>
-                <li>You don't have an account</li>
-                <li>You have an account but your not logged in</li>
-                <li>Your session expired </li>
-                <li>You are not authorized to access this content</li>
+                <li>Age: <span>19</span></li>
+                <li>Gender: <span>Attack helicopter</span></li>
+                <li>Hobbies: <span>'Driving' attack helicopters ;)</span></li>
+                <li>Reason to register: <span>I Don't know lmao</span></li>
             </ul>
         </div>  
 
-        <button> Show me the app </button> 
+        <button> ADD AS A FRIEND </button> 
     </div>
 </div>

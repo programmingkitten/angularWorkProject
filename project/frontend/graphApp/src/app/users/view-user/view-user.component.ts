@@ -24,7 +24,10 @@ export class ViewUserComponent implements OnInit{
         const resClone = res as any
         if (resClone.error) {
           this.router.navigate(['not-found'])
-        } else {console.log(resClone.data)}      
+        } else {
+          this.user = resClone.data
+          console.log(this.user)
+        }      
       }
     )
   }

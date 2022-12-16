@@ -7,6 +7,8 @@ import { FeedbackDetailsComponent } from './feedback-details/feedback-details.co
 import { FormsModule } from '@angular/forms';
 import { AuthGuard } from '../auth-guard';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { EmailPipe } from './email.pipe';
+import { ShortenPipe } from './shorten.pipe';
 
 
 
@@ -16,6 +18,8 @@ import { ViewUserComponent } from './view-user/view-user.component';
     FeedbackComponent,
     FeedbackDetailsComponent,
     ViewUserComponent,
+    EmailPipe,
+    ShortenPipe,
   ],
   imports: [
     CommonModule,
