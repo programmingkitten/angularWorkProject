@@ -26,3 +26,20 @@ class UserSerializer(serializers.ModelSerializer):
         instance.picture = validated_data.get('picture', instance.picture)
         instance.save()
         return instance
+
+class FeedbackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['subject', 'message']
+
+    def create(self, validated_data):
+        instance = self.Meta.model(**validated_data)
+        instance.save()
+        return instance
+
+    def update(self, instance, validated_data):
+        instance.message = validated_data.get('message', instance.message)
+        instance.subject = validated_data.get('subject', instance.subject)
+        instance.save()
+        return instance
+   
