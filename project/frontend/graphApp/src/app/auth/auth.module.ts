@@ -7,12 +7,16 @@ import { FormsModule } from '@angular/forms';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthInterceptorProvider } from './auth-interceptor';
 import { AuthGuard } from '../auth-guard';
+import { ValidatorDirective } from './validator.directive';
+import { FormValidatorDirective } from './form-validator.directive';
 
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    ValidatorDirective,
+    FormValidatorDirective
   ],
   providers: [
     AuthInterceptorProvider

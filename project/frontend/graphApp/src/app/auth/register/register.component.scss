@@ -13,8 +13,9 @@ h1 {
 }
 
 .middleContent {
-    margin-top: 20vh;
+    margin-top: 10vh;
     margin-left: 5.8vw;
+    overflow-y: auto;
 }
 
 .middleContent input {
@@ -53,12 +54,15 @@ h1 {
 .middleContent label {
     color:rgba(193, 15, 15, 0.564);
     font-size: calc(1vw + 1em);
-    padding-bottom: 1vh;
 }
 
 #error {
     color: rgb(138, 39, 39);
-    position: absolute;
-    font-size: calc(.9vw + .9em);
-    margin-top: 7vh;
+    font-size: calc(.7vw + .7em);
+    margin: 0;
+    width: 25vw;
+}
+
+label {
+    width: 10vw;
 }

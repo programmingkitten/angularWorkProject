@@ -1,11 +1,14 @@
 <body>
     <div class="middleContent">
-            <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
+            <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)" >
                 <h1> REGISTER </h1>
-                <label>{{error ? error : 'email'}}</label>
-                <input type="email" name="email" #emailInput="ngModel" ngModel email required>
+                <h1 id="error">{{error}}</h1>
+                <label>email</label>
+                <input type="email" name="email"  #emailInput="ngModel" ngModel email required>
                 <label>password</label>
                 <input name="password" password type="password" ngModel required>
+                <label>repass</label>
+                <input name="repass" repass type="password" ngModel required>
                 <button>SUBMIT</button>
             </form>
             
@@ -23,7 +26,7 @@
                     <span>*Password must contain at least one: letter, number</span>
                 </p> 
             </div>  
-
+            <input>
             <button> Show me the app </button> 
         </div>
     </div>
