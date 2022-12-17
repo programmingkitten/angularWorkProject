@@ -57,14 +57,19 @@ class feedbackView(APIView):
         })
 
 
-class editView(APIView):
-    def put(self, request):
+class getFeedbackView(APIView):
+    def post(self, request):
+        print(request.data)
         userId = cookieCheck(request)['id']
-        data = request.data
         user = User.objects.filter(id=userId).first()
-        data['user'] = user
-        serializer = FeedbackSerializer(instance=user, data=data, partial=True)
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(serializer.data)
+        data = request.data
+        feedbackId = data['id']
+        feedback = Feedback.objects.filter(id=data['id']).first()
+        if feedback.user_id == userId:
+                return Response({
+                    'subject': feedback.subject,
+                    'message': feedback.message,
+                    'created_at': feedback.created_at,
+                    'updated_at': feedback.updated_at,
+                })
         raise ValidationError

@@ -5,6 +5,7 @@ from django.urls import path
 import feedback.views as views
 urlpatterns = [
     path('feedback', views.feedbackView.as_view()),
+    path('feedback/data', views.getFeedbackView.as_view())
     # path('feedback/delete', views.UserView.as_view()),
 
 ]
