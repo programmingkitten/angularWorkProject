@@ -5,6 +5,7 @@ import { CalculatorComponent } from './graph/calculator/calculator.component';
 import { AboutComponent } from './main/about/about.component';
 import { ContactComponent } from './feedback/contact/contact.component';
 import { IndexComponent } from './main/index/index.component';
+import { FeedbackFormComponent } from './feedback-new/feedback-form/feedback-form.component';
 
 
 const routes: Routes = [
@@ -34,10 +35,11 @@ const routes: Routes = [
 
   {
     path: 'contacts',
-    component: ContactComponent,
+    component: FeedbackFormComponent,
     canActivate: [AuthGuard],
 
   },
+
 
 
 ];

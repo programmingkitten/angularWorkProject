@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { ErrorsModule } from './errors/errors.module';
 import { UsersModule } from './users/users.module';
+import { FeedbackNewModule } from './feedback-new/feedback-new.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     FormsModule,
     ErrorsModule,
+    FeedbackNewModule,
 
   ],
   providers: [],

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Google+Sans:400,500,700|Google+Sans+Text:400&lang=en">
+    <style> 
+    
+    </style>
+</head>
+<body>
+
+    <div class="middleContent">
+        <div class="title">
+            <h1> Let's get in touch</h1>
+            <p> We're open for any suggestions or just have a chat :)</p>
+        </div>
+
+        <div class="contacts">
+            <div class="contact">
+                <img src="/assets/images/locationIcon.png"> 
+                <p> <span>Adress:</span> Sofia, 443, Botevgradsko Shose blvd.</p>
+            </div>
+
+            <div class="contact">
+                <img src="/assets/images/phoneIcon.png"> 
+                <p> <span>Phone:</span> +359 893864401 </p>
+            </div>
+
+            <div class="contact">
+                <img src="/assets/images/arrowPlaneIcon.png"> 
+                <p> <span>Email:</span> ivan.yordanov.gt@gmail.com</p>
+            </div>
+        
+            
+            <div class="contact">
+                <img src="/assets/images/globeIcon.png"> 
+                <p> <span>Website:</span> https://www.pgzemedelie.com </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sideBar">
+        <form #feedbackForm="ngForm" (ngSubmit)="formSubmitHandler(feedbackForm)">
+
+            <h1> GET IN TOUCH </h1>
+
+            <div class="nameEmail">
+                <div class="name">
+                    <label>FULL NAME</label>
+                    <input placeholder="Name">
+                </div>
+                <div class="email">
+                    <label>EMAIL ADDRESS</label>
+                    <input placeholder="Email">
+                </div>
+            </div>
+            <label>SUBJECT</label>
+            <input id="subject" placeholder="Subject" name="subject" subject #subject ngModel>
+            <label>MESSAGE</label>
+            <textarea placeholder="Message" name="message" message #message ngModel></textarea>
+
+            <button id="sendMessage">Send message</button>
+            
+        </form>    
+        <div class="loadingBarContent">
+            <h1 id="status">Connecting to servers..</h1> 
+            <div class="loadingBar">
+                <div class="bar">
+                    <h1 id="percentages">1</h1>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+
+<script src="../js/sendMessageAnimation.js"></script>
+</html>
