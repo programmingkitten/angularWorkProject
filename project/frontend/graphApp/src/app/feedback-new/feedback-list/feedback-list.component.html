@@ -5,7 +5,7 @@
             <!-- <h1> {{feedback.id}}</h1> -->
             <h1>{{feedback.subject | shorten: 30}} <span>NOT REVIEWED</span></h1>
             <p>{{feedback.message | shorten: 80}}</p>
-            <a routerLink="">info</a>
+            <a routerLink="/feedback-details/{{feedback.id}}">info</a>
         </div>
     </div>
 </div>
