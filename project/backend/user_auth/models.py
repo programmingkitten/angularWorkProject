@@ -16,6 +16,6 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
 class Feedback(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='users')
     subject = models.CharField(max_length=40)
     message = models.TextField(max_length=1500)

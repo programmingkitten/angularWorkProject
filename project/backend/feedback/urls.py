@@ -2,11 +2,9 @@ from django.urls import re_path, include
 
 from django.contrib import admin
 from django.urls import path
-import user_auth.views as views
-
+import feedback.views as views
 urlpatterns = [
-    path('create', views.registerView.as_view()),
-    path('edit', views.loginView.as_view()),
-    path('delete', views.UserView.as_view()),
+    path('feedback', views.feedbackView.as_view()),
+    # path('feedback/delete', views.UserView.as_view()),
 
 ]

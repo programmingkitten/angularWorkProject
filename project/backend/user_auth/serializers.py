@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from user_auth.models import User
+from user_auth.models import User, Feedback
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -28,9 +28,11 @@ class UserSerializer(serializers.ModelSerializer):
         return instance
 
 class FeedbackSerializer(serializers.ModelSerializer):
+
+
     class Meta:
-        model = User
-        fields = ['subject', 'message']
+        model = Feedback
+        fields = ['subject', 'message', 'user']
 
     def create(self, validated_data):
         instance = self.Meta.model(**validated_data)
@@ -42,4 +44,4 @@ class FeedbackSerializer(serializers.ModelSerializer):
         instance.subject = validated_data.get('subject', instance.subject)
         instance.save()
         return instance
-   
+
