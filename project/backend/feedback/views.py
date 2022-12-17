@@ -49,6 +49,8 @@ class feedbackView(APIView):
             serializer.data['id'] = 'ID LOOK'
             data = serializer.data
             data['id'] = feedback.id
+            data['created_at'] = feedback.created_at
+            data['updated_at'] = feedback.updated_at
             feedbacksList.append(data)
         return Response({
             'data': feedbacksList
