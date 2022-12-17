@@ -26,7 +26,7 @@ import { FeedbackDetailsComponent } from './feedback-details/feedback-details.co
     RouterModule,
     RouterModule.forChild([
       {'path': 'feedback-list', component: FeedbackListComponent, canActivate: [AuthGuard]},
-      {'path': 'feedback-details/:id', component: FeedbackComponent, canActivate: [AuthGuard]}
+      {'path': 'feedback-details/:id', component: FeedbackDetailsComponent, canActivate: [AuthGuard]}
     ])
   ]
 })

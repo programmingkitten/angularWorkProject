@@ -1,1 +1,13 @@
-<p>feedback-details works!</p>
+<div class="middleContent">
+    <div class="content">
+        <label>SUBJECT</label>
+        <h1> {{feedback?.subject}} </h1>
+        <label>MESSAGE</label>
+        <p> {{feedback?.message}} </p>
+        <label>CREATED AT</label>
+        <h2> {{feedback?.created_at | date : 'medium'}} </h2>
+        <label>UPDATED AT</label>
+        <h2> {{feedback?.updated_at | date : 'medium'}} </h2>
+        <a routerLink=""> EDIT</a>
+    </div>
+</div>

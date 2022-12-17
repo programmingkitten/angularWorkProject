@@ -1,0 +1,46 @@
+.content {
+    margin-top: 10vh;
+    margin-left: 20vw;
+    width: 100%;
+    letter-spacing: 1px;
+    background-color: rgba(147, 145, 150, 0.183);
+    width: 30vw;
+    text-align: center;
+    padding-bottom: 2.5vh;
+    padding-top: 2vh;
+}
+
+label {
+    font-size: calc(1vw + 1em);
+    font-family: cursive;
+    color: rgba(205, 92, 92, 0.733);
+}
+
+h1 {
+    color: rgb(252, 151, 0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: calc(.7vw + .7em);
+}
+
+p, h2 {
+    color: rgb(252, 151, 0);
+    font-family: cursive;
+}
+
+h2 {
+
+}
+
+.middleContent {
+    background-image: url('/assets/images/backgroundFeedback.png');
+    width: 80%;
+    background-size: center;
+    background-size: calc(37vw + 37em);
+}
+
+body {
+
+}
+
+
+
