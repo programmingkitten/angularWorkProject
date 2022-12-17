@@ -27,8 +27,8 @@ import { ShortenPipe } from './shorten.pipe';
     RouterModule.forChild([
       {path:'profile', component:ProfileComponent, canActivate: [AuthGuard]},
       {path:'profile/:id', component: ViewUserComponent, canActivate: [AuthGuard]},
-      {path:'feedback-list', component: FeedbackComponent, canActivate: [AuthGuard]},
-      {path:'feedback-detais/:id', component: FeedbackDetailsComponent, canActivate: [AuthGuard]}
+      {path:'feedback/feedback-list', component: FeedbackComponent, canActivate: [AuthGuard]},
+      {path:'feedback/feedback-detais/:id', component: FeedbackDetailsComponent, canActivate: [AuthGuard],}
     ]),
    
   ]

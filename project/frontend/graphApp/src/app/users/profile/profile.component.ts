@@ -27,6 +27,9 @@ export class ProfileComponent implements OnInit{
     this.setUser();
   };
 
+  feedback() {
+    this.router.navigate(['feedback/feedback-list'])
+  }
 
   viewProfile() {
     this.authService.isLoggedIn().subscribe({

@@ -4,6 +4,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { IndexComponent } from './index/index.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
     StatisticsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
 
   exports: [
