@@ -1,9 +1,11 @@
 <body>
 <div class="middleContent">
-    <div *ngFor="let feedback of feedbacks">
-        
-        <h1>{{feedback.subject}}</h1>
-        <h1>{{feedback.message}}</h1>
+    <div class="content">
+        <div class="feedbackBox" *ngFor="let feedback of feedbacks">
+            
+            <h1>{{feedback.subject | shorten: 30}} <span>NOT REVIEWED</span></h1>
+            <p>{{feedback.message | shorten: 80}}</p>
+        </div>
     </div>
 </div>
 </body>

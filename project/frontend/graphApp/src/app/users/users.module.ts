@@ -29,7 +29,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       {path:'feedback/feedback-list', component: FeedbackComponent, canActivate: [AuthGuard]},
       {path:'feedback/feedback-detais/:id', component: FeedbackDetailsComponent, canActivate: [AuthGuard],}
     ]),
-   
+  ],
+   exports: [
+    EmailPipe,
+    ShortenPipe,
   ]
 })
 export class UsersModule { }

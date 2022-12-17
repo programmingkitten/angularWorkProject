@@ -6,6 +6,8 @@ import { FeedbackFormComponent } from './feedback-form/feedback-form.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 import { RouterModule } from '@angular/router';
 import { AuthGuard } from '../auth-guard';
+import { ShortenPipe } from '../feedback/shorten.pipe';
+import { UsersModule } from '../users/users.module';
 
 
 
@@ -18,6 +20,7 @@ import { AuthGuard } from '../auth-guard';
   imports: [
     CommonModule,
     FormsModule,
+    UsersModule,
     RouterModule.forChild([
       {'path': 'feedback-list', component: FeedbackListComponent, canActivate: [AuthGuard]}
     ])

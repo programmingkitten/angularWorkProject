@@ -1,3 +1,45 @@
 .middleContent {
-    margin-left: 12vw;
+    background-image: url('/assets/images/backgroundFeedback.png');
+    width: 80%;
+    background-size: center;
+    background-size: calc(37vw + 37em);
+    overflow-y: auto;
 }
+
+body {
+
+}
+
+.middleContent .content {
+    margin-top: 15vh;
+    margin-left: 15vw;
+    padding-bottom: 10vh;
+
+
+}
+
+.feedbackBox {
+    background-color: rgba(31, 30, 30, 0.413);
+    width: 60%;
+    height: 17%;
+    margin-top: 4vh;
+}
+
+.feedbackBox h1 {
+    color: yellow;
+    font-family: cursive;
+    font-size: calc(.74vw + .74em);
+}
+
+.feedbackBox p {
+    color: yellow;
+    font-size: calc(.60vw + .60em);
+    font-family: cursive, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    -webkit-text-stroke: .8px rgb(0, 0, 0);
+}
+
+span {
+    color: red;
+    font-size: calc(.4vw + .4em);
+}
+
