@@ -33,7 +33,8 @@ class feedbackView(APIView):
         return Response(serializer.data)
 
     def put(self, request):
-        serializer = FeedbackSerializer(request.data)
+        feedback = Feedback.objects.filter(id=request.data['id']).first()
+        serializer = FeedbackSerializer(instance=feedback, data=request.data, partial=True)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
