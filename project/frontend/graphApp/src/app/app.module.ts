@@ -27,8 +27,8 @@ import { FeedbackNewModule } from './feedback-new/feedback-new.module';
     FormsModule,
     UsersModule,
     FormsModule,
-    ErrorsModule,
     FeedbackNewModule,
+    ErrorsModule,
 
   ],
   providers: [],
