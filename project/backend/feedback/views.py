@@ -39,6 +39,7 @@ class feedbackView(APIView):
             serializer.save()
             return Response(serializer.data)
         raise ValidationError
+
     def get(self, request):
         userId = cookieCheck(request)['id']
         feedbacks = Feedback.objects.filter(user_id=userId)

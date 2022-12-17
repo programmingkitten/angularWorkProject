@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth-guard';
 import { CalculatorComponent } from './graph/calculator/calculator.component';
 import { AboutComponent } from './main/about/about.component';
-import { ContactComponent } from './main/contact/contact.component';
+import { ContactComponent } from './feedback/contact/contact.component';
 import { IndexComponent } from './main/index/index.component';
 
 

@@ -28,7 +28,7 @@ export class ProfileComponent implements OnInit{
   };
 
   feedback() {
-    this.router.navigate(['feedback/feedback-list'])
+    this.router.navigate(['feedback/feedback-list '])
   }
 
   viewProfile() {
