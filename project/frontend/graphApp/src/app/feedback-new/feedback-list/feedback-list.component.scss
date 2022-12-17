@@ -23,6 +23,9 @@ body {
     width: 60%;
     height: 17%;
     margin-top: 4vh;
+    padding-left: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
 }
 
 .feedbackBox h1 {
@@ -43,3 +46,14 @@ span {
     font-size: calc(.4vw + .4em);
 }
 
+.middleContent .content .feedbackBox a {
+    color: indianred;
+    text-decoration: none;
+    font-family: cursive;
+    font-size: calc(0.7vw + .7em);
+    text-align: center;
+}
+
+.middleContent .content .feedbackBox a::hover {
+    color: aliceblue;
+}
