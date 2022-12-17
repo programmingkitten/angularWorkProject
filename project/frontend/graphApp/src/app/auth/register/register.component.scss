@@ -58,4 +58,7 @@ h1 {
 
 #error {
     color: rgb(138, 39, 39);
+    position: absolute;
+    font-size: calc(.9vw + .9em);
+    margin-top: 7vh;
 }

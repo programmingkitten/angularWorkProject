@@ -14,6 +14,7 @@ export class RegisterComponent {
     'id': number,
     'email': string
   } | undefined;
+  error: string = '';
   constructor(
     private http: HttpClient,
     private authService: AuthService,
@@ -23,8 +24,9 @@ export class RegisterComponent {
     const data: {email: string, password: string} = form.value;
     if (form.invalid) {console.log("?");return;}
     this.authService.post('register', data)
-    .subscribe(res => {
-      this.router.navigate(['/login'])
+    .subscribe({
+      next: (res) => {this.router.navigate(['login'])},
+      error: (err) => {this.error = err.email[0]}
     })
   }
 

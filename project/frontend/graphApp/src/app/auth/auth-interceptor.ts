@@ -14,8 +14,12 @@ export class AuthInterceptor implements HttpInterceptor {
 
             catchError(err => {
                 if (req.url.includes('login')) {
+                    console.log('INTERCEPTOR')
                     return throwError(() => err.error.detail)
-                } else if (req.url.includes('user')) {
+                } else if (req.url.includes('register')) {
+                    return throwError(() => err.error)
+                } 
+                 else if (req.url.includes('user')) {
                 return throwError(() => 'Not logged in.')
                 }
               

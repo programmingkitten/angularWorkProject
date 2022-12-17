@@ -2,7 +2,7 @@
     <div class="middleContent">
             <form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
                 <h1> REGISTER </h1>
-                <label>email</label>
+                <label>{{error ? error : 'email'}}</label>
                 <input type="email" name="email" #emailInput="ngModel" ngModel email required>
                 <label>password</label>
                 <input name="password" password type="password" ngModel required>
