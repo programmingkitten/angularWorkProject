@@ -26,4 +26,8 @@ export class FeedbackService {
     return this.http.get(this.apiURL, {withCredentials: true});
   };
 
+  getFeedback(id: string) {
+    return this.http.post(this.apiURL + '/data', {'id': id}, {withCredentials: true})
+  }
+
 }
