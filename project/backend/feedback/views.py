@@ -33,11 +33,6 @@ class feedbackView(APIView):
         return Response(serializer.data)
 
     def put(self, request):
-        userId = cookieCheck(request)['id']
-        data = request.data
-        user = User.objects.filter(id=userId).first()
-        data['user'] = user
-        print("IMHERE")
         serializer = FeedbackSerializer(request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
