@@ -46,7 +46,10 @@ class feedbackView(APIView):
         feedbacksList = []
         for feedback in feedbacks:
             serializer = FeedbackSerializer(feedback)
-            feedbacksList.append(serializer.data)
+            serializer.data['id'] = 'ID LOOK'
+            data = serializer.data
+            data['id'] = feedback.id
+            feedbacksList.append(data)
         return Response({
             'data': feedbacksList
         })
