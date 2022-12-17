@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit{
   welcomePageUrl: boolean = true;
   userConfirmData: boolean = false;
   imageURLString: string = 'ok';
+  userID: string | undefined;
 
   constructor(private authService: AuthService, private router: Router) {}
   
@@ -62,7 +63,7 @@ export class ProfileComponent implements OnInit{
     this.user.email = extractedData.email.split('@')[0];
     this.user.description = extractedData.description;
     this.user.imageURL = extractedData.imageURL;
-    console.log(this.user)
+    this.userID = data.data.id;
   };
 
   submitFormHandler(form: NgForm) {
@@ -70,7 +71,7 @@ export class ProfileComponent implements OnInit{
     const data = {'description': this.descriptionForm.nativeElement.value, imageURL: this.imageURLString};
       this.authService.put('user', data).subscribe({
       next: (res) => {
-        this.router.navigate(['home'])
+        this.router.navigate([`profile/${this.userID}`])
         console.log("NAVIGATED")
       },
       error: (err) => console.log('error'),
